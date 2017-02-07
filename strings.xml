@@ -13,6 +13,18 @@
     <string name="peacetreaty">Peace treaty</string>
     <string name="orcswon">THE\nORCS\nWON!</string>
     <string name="dwarveswon">THE\nDWARVES\nWON!</string>
-    <string name="tenthousand">10.000</string>
-    <string name="zero">0</string>
+    <string name="tenthousand" translatable="false">10.000</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="orclost">The orcs attacked and lost.\n</string>
+    <string name="orcwin">The orcs attacked and won.\n</string>
+    <string name="dwarfwin">The dwarves attacked and won.\n</string>
+    <string name="dwarflost">The dwarves attacked and lost.\n</string>
+    <string name="attack">Attack:</string>
+    <string name="defense">Defense:</string>
+    <string name="multiply">Multiply:</string>
+    <string name="dwarfharvest">The dwarves sucessfully harvested</string>
+    <string name="orcharvest">The orcs sucessfully harvested</string>
+    <string name="harvestres">resources</string>
+    <string name="atpeace">The orcs and the dwarves came to an agreement.\nHow long will it last?</string>
+    <string name="nowinner">Erm... No winner?</string>
 </resources>

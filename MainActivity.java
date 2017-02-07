@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import static com.example.android.dwarvesvsorcs.R.string.resources;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
 // if the dwarves (the attackers) won
         if (attackRoll >= defenseRoll) {
-            report = "The dwarves attacked and won.\n";
+            report = getString(R.string.dwarfwin);
             dwarvenHonor = dwarvenHonor + multiply;
 
             dwarvenResources = dwarvenResources - (defenseRoll * 10 * multiply);
@@ -116,14 +117,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
 // if they lost
-            report = "The dwarves attacked and lost.\n";
+            report = getString(R.string.dwarflost);
 
             dwarvenResources = dwarvenResources - (attackRoll * 10 * multiply);
             orcishResources = orcishResources - ((defenseRoll - attackRoll) * 10 * multiply);
         }
 
 // generating report text plus info
-        report = report + "/Attack:" + String.valueOf(attackRoll) + ",Defense:" + String.valueOf(defenseRoll) + ", multiply:" + String.valueOf(multiply) + "/";
+        report = report + "/" + getString(R.string.attack) + String.valueOf(attackRoll) + ", " + getString(R.string.defense) + String.valueOf(defenseRoll) + ", " + getString(R.string.multiply) + String.valueOf(multiply) + "/";
 
 // disable the dwarves button - it's the orcs' turn, so activate their buttons
         switchSides();
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
 // if the orcs (the attackers) won
         if (attackRoll >= defenseRoll) {
-            report = "The orcs attacked and won.\n";
+            report = getString(R.string.orcwin);
             orcishHonor = orcishHonor + multiply;
 
             dwarvenResources = dwarvenResources - (defenseRoll * 10 * multiply);
@@ -171,14 +172,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
 // if they lost
-            report = "The orcs attacked and lost.\n";
+            report = getString(R.string.orclost);
 
             dwarvenResources = dwarvenResources - (attackRoll * 10 * multiply);
             orcishResources = orcishResources - ((defenseRoll - attackRoll) * 10 * multiply);
         }
 
 // generating report text plus info
-        report = report + "/Attack:" + String.valueOf(attackRoll) + ",Defense:" + String.valueOf(defenseRoll) + ", multiply:" + String.valueOf(multiply) + "/";
+        report = report + "/" + getString(R.string.attack) + String.valueOf(attackRoll) + ", " + getString(R.string.defense) + String.valueOf(defenseRoll) + ", " + getString(R.string.multiply) + String.valueOf(multiply) + "/";
 
 // disable the orcs button - it's the dwarves' turn, so activate their buttons
         switchSides();
@@ -203,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         switchSides();
 
 // displaying it, using report
-        String report = "The dwarves sucessfully harvested " + String.valueOf(collectedResources) + " resources.";
+        String report = getString(R.string.dwarfharvest) + " " +String.valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
         displayReport(report);
     }
 
@@ -223,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         switchSides();
 
 // displaying it, using report
-        String report = "The orcs sucessfully harvested " + String.valueOf(collectedResources) + " resources.";
+        String report = getString(R.string.orcharvest) + " " + String.valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
         displayReport(report);
     }
 
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
 // doing the same for the honor points
         oHon.setText(String.valueOf(orcishHonor));
         dHon.setText(String.valueOf(dwarvenHonor));
-        displayReport("The orcs and the dwarves came to an agreement.\nHow long will it last?");
+        displayReport(getString(R.string.atpeace));
 
 // enable all buttons
         orcish1.setEnabled(true);
@@ -326,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (orcishHonor == dwarvenHonor) { // tie
-                r = r + "\nErm... No winner?";
+                r = r + "\n" + getString(R.string.nowinner);
             }
         }
 
