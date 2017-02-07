@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Dwarves vs orcs</string>
+    <string name="resources">Resources: </string>
+    <string name="honor">Honor</string>
+    <string name="killachieftan">Kill a chieftan</string>
+    <string name="persecuteraiders">Persecute raiders</string>
+    <string name="slaygrunts">Slay grunts</string>
+    <string name="harvest">Gather resources</string>
+    <string name="butchathane">Butch a thane</string>
+    <string name="razeavillage">Raze a village</string>
+    <string name="murderpeons">Murder peons</string>
+    <string name="extruderesources">Extrude resources</string>
+    <string name="peacetreaty">Peace treaty</string>
+    <string name="orcswon">THE\nORCS\nWON!</string>
+    <string name="dwarveswon">THE\nDWARVES\nWON!</string>
+</resources>
