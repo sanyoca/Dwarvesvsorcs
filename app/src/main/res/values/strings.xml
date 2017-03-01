@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Dwarves vs orcs</string>
+    <string name="resources">Resources: </string>
+    <string name="honor">Honor</string>
+    <string name="killachieftan">Kill a chieftan</string>
+    <string name="persecuteraiders">Persecute raiders</string>
+    <string name="slaygrunts">Slay grunts</string>
+    <string name="harvest">Gather resources</string>
+    <string name="butchathane">Butch a thane</string>
+    <string name="razeavillage">Raze a village</string>
+    <string name="murderpeons">Murder peons</string>
+    <string name="extruderesources">Extrude resources</string>
+    <string name="peacetreaty">Peace treaty</string>
+    <string name="orcswon">THE\nORCS\nWON!</string>
+    <string name="dwarveswon">THE\nDWARVES\nWON!</string>
+    <string name="tenthousand" translatable="false">10000</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="orclost">The orcs attacked and lost.\n</string>
+    <string name="orcwin">The orcs attacked and won.\n</string>
+    <string name="dwarfwin">The dwarves attacked and won.\n</string>
+    <string name="dwarflost">The dwarves attacked and lost.\n</string>
+    <string name="attack">Attack:</string>
+    <string name="defense">Defense:</string>
+    <string name="multiply">Multiply:</string>
+    <string name="dwarfharvest">The dwarves successfully harvested</string>
+    <string name="orcharvest">The orcs successfully harvested</string>
+    <string name="harvestres">resources</string>
+    <string name="atpeace">The orcs and the dwarves came to an agreement.\nHow long will it last?</string>
+    <string name="nowinner">Erm... No winner?</string>
+</resources>
