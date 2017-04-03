@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     Button dwarf0, dwarf1, dwarf2, dwarf3;
     Button orcish0, orcish1, orcish2, orcish3;
 
-
     TextView dRes, oRes, dHon, oHon;
 
     @Override
