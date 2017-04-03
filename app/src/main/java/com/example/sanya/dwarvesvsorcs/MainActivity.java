@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 // generating the the attack and defense rolls
         int attackRoll = (int) ((Math.random() * 100) + 1);
+
         int defenseRoll = (int) ((Math.random() * 100) + 1);
         String report = "";
 
