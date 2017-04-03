@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="honorpointtextsize">50sp</dimen>
+    <dimen name="honorpointmargin">5dp</dimen>
+    <dimen name="honortextsize">20sp</dimen>
+    <dimen name="honorbottommmargin">10dp</dimen>
+    <dimen name="resourceright">5dp</dimen>
+    <dimen name="resourceleft">8dp</dimen>
+    <dimen name="buttontextsize">12sp</dimen>
+    <dimen name="buttonbottommargin">3dp</dimen>
+    <dimen name="victorytextsize">20sp</dimen>
+    <dimen name="victorymargintop">10dp</dimen>
+</resources>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Dwarves vs orcs</string>
+    <string name="resources">Resources: </string>
+    <string name="honor">Honor</string>
+    <string name="killachieftan">Kill a chieftan</string>
+    <string name="persecuteraiders">Persecute raiders</string>
+    <string name="slaygrunts">Slay grunts</string>
+    <string name="harvest">Gather resources</string>
+    <string name="butchathane">Butch a thane</string>
+    <string name="razeavillage">Raze a village</string>
+    <string name="murderpeons">Murder peons</string>
+    <string name="extruderesources">Extrude resources</string>
+    <string name="peacetreaty">Peace treaty</string>
+    <string name="orcswon">THE\nORCS\nWON!</string>
+    <string name="dwarveswon">THE\nDWARVES\nWON!</string>
+    <string name="tenthousand" translatable="false">10000</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="orclost">The orcs attacked and lost.\n</string>
+    <string name="orcwin">The orcs attacked and won.\n</string>
+    <string name="dwarfwin">The dwarves attacked and won.\n</string>
+    <string name="dwarflost">The dwarves attacked and lost.\n</string>
+    <string name="attack">Attack:</string>
+    <string name="defense">Defense:</string>
+    <string name="multiply">Multiply:</string>
+    <string name="dwarfharvest">The dwarves successfully harvested</string>
+    <string name="orcharvest">The orcs successfully harvested</string>
+    <string name="harvestres">resources</string>
+    <string name="atpeace">The orcs and the dwarves came to an agreement.\nHow long will it last?</string>
+    <string name="nowinner">Erm... No winner?</string>
+    <string name="rulestitle">Rules</string>
+    <string name="rules1">The rules are simple: the orcs fight against the dwarves. Each part starts with 10.000 resources, which they can use to attack the other side and causing as much damage as they can. Each action costs resources from both sides, depending of the strength and the final outcome of the action. By default actions cost 30 (Kill a chieftan/Butch a thane), 20 (Persecute raiders / Raze a village) or 10 (Slay grunts / Murder peons) resources, but that gets multiplied by a value depending on the attack and defense roll. Both sides lose resources, but the attacker - if won - gets honor points, also depending on the action it successfully performed (3 points for Kill a chieftan/Butch a thane, 2 points for Persecute raiders / Raze a village and 1 point for Slay grunts / Murder peons).</string>
+    <string name="rules2">If one side is getting low on resources, it can still decide to Gather resources / Extrude resources, which will grant them a small amount of usable resources to continue the war. If the resource on either side drops below 0, the war ends and the one, with the higher Honor points win.</string>
+    <string name="rules3">The Peace treaty stops the war, restore the resources and clear all the honor points.</string>
+</resources>
