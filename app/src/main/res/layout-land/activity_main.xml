@@ -271,15 +271,15 @@
                 android:text="@string/dwarveswon" />
         </LinearLayout>
         <!-- info / rules -->
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:clickable="true"
-                android:onClick="rules"
-                android:padding="@dimen/small_margin"
-                android:src="@drawable/ic_info_black_24dp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:onClick="rules"
+            android:padding="@dimen/small_margin"
+            android:src="@drawable/ic_info_black_24dp" />
 
     </RelativeLayout>
 

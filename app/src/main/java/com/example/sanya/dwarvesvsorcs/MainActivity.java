@@ -368,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
         displayReport(" ");
     }
 
-    public void rules(View view)    {
+    public void rules(View view) {
         Intent intent = new Intent(this, Showrules.class);
         startActivity(intent);
     }
