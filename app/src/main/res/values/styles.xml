@@ -1,0 +1,84 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="honorPointsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/honorpointtextsize</item>
+        <item name="android:layout_margin">@dimen/honorpointmargin</item>
+        <item name="android:background">@color/trans_white</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="resourceStyle">
+        <item name="android:layout_marginRight">@dimen/resourceright</item>
+        <item name="android:layout_marginLeft">@dimen/resourceleft</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="honorTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/honortextsize</item>
+        <item name="android:background">@color/trans_white</item>
+        <item name="android:layout_marginBottom">@dimen/honorbottommmargin</item>
+    </style>
+
+    <style name="dwarvenButtons">
+        <item name="android:textSize">@dimen/buttontextsize</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/dwarvenbuttoncolor</item>
+        <item name="android:layout_marginBottom">@dimen/buttonbottommargin</item>
+    </style>
+
+    <style name="orcishButtons" parent="dwarvenButtons">
+        <item name="android:backgroundTint">@color/orcbuttoncolor</item>
+    </style>
+
+    <style name="actionLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="victory">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/victorymargintop</item>
+        <item name="android:textSize">@dimen/victorytextsize</item>
+        <item name="android:background">@color/trans_white</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="rulestitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/victorytextsize</item>
+        <item name="android:layout_margin">@dimen/activity_vertical_margin</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="matchwrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>
