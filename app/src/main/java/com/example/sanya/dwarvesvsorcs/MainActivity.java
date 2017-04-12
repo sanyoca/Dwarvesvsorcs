@@ -22,8 +22,14 @@ public class MainActivity extends AppCompatActivity {
     int orcishHonor = 0;
     int activeGroup = 0;
 
-    Button dwarf0, dwarf1, dwarf2, dwarf3;
-    Button orcish0, orcish1, orcish2, orcish3;
+    Button dwarf0;
+    Button dwarf1;
+    Button dwarf2;
+    Button dwarf3;
+    Button orcish0;
+    Button orcish1;
+    Button orcish2;
+    Button orcish3;
 
     TextView dRes, oRes, dHon, oHon;
 
@@ -97,9 +103,6 @@ public class MainActivity extends AppCompatActivity {
             orcishResources = orcishResources - ((defenseRoll - attackRoll) * 10 * multiply);
         }
 
-        // generating report text plus info
-        // report = report + "/" + getString(R.string.attack) + valueOf(attackRoll) + ", " + getString(R.string.defense) + valueOf(defenseRoll) + ", " + getString(R.string.multiply) + valueOf(multiply) + "/";
-
         // disable the dwarves button - it's the orcs' turn, so activate their buttons
         switchSides();
 
@@ -136,9 +139,6 @@ public class MainActivity extends AppCompatActivity {
             dwarvenResources = dwarvenResources - (attackRoll * 10 * multiply);
             orcishResources = orcishResources - ((defenseRoll - attackRoll) * 10 * multiply);
         }
-
-        // generating report text plus info
-        // report = report + "/" + getString(R.string.attack) + valueOf(attackRoll) + ", " + getString(R.string.defense) + valueOf(defenseRoll) + ", " + getString(R.string.multiply) + valueOf(multiply) + "/";
 
         // disable the orcs button - it's the dwarves' turn, so activate their buttons
         switchSides();
