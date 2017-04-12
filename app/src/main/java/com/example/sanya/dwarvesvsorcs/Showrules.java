@@ -18,15 +18,15 @@ public class Showrules extends AppCompatActivity {
         setContentView(R.layout.info);
 
         WebView w1 = (WebView) findViewById(R.id.ruletext1);
-        String intro = "<p align='justify'>"+getString(R.string.rules1)+"</p>";
+        String intro = "<p align='justify'>" + getString(R.string.rules1) + "</p>";
         w1.loadData(intro, "text/html", null);
 
         WebView w2 = (WebView) findViewById(R.id.ruletext2);
-        String intro2 = "<p align='justify'>"+getString(R.string.rules2)+"</p>";
+        String intro2 = "<p align='justify'>" + getString(R.string.rules2) + "</p>";
         w2.loadData(intro2, "text/html", null);
 
         WebView w3 = (WebView) findViewById(R.id.ruletext3);
-        String intro3 = "<p align='justify'>"+getString(R.string.rules3)+"</p>";
+        String intro3 = "<p align='justify'>" + getString(R.string.rules3) + "</p>";
         w3.loadData(intro3, "text/html", null);
     }
 }

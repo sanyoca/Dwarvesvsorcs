@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /**
-        * Initializing the globals
-        */
+         * Initializing the globals
+         */
         dwarf0 = (Button) findViewById(R.id.dwarf0);
         dwarf1 = (Button) findViewById(R.id.dwarf1);
         dwarf2 = (Button) findViewById(R.id.dwarf2);
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method is called when a dwarven button is clicked
+     *
      * @param view is the view that was clicked on (default: the buttons on the dwarf side)
      */
     public void dwarven(View view) {
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method is called when an orcish button is clicked
+     *
      * @param view is the view that was clicked on (default: the buttons on the orc side)
      */
     public void orcish(View view) {
@@ -150,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Method for resource collection for the dwarves
+     *
      * @param view the collect resources button for dwarves
      */
     public void dwarvenCollect(View view) {
@@ -170,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * ethod for resource collection for the orcs
+     *
      * @param view the collect resources button for the orcs
      */
     public void orcishCollect(View view) {
@@ -190,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method is for resetting purposes, stating that the orcs and dwarves came to a peace agreement (lol)
+     *
      * @param view the peace treaty button
      */
     public void peaceTreaty(View view) {
@@ -248,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method displays reports.
+     *
      * @param r the report to be displayed
      */
     private void displayReport(String r) {
@@ -322,6 +328,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * On screen rotation - or anything that stops the run of the app - save the current status of the app
+     *
      * @param savedInstanceState
      */
     @Override
@@ -339,6 +346,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * When the app restarts, restore the values
+     *
      * @param savedInstanceState
      */
     @Override
@@ -379,6 +387,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Show the rules, calling an intent
+     *
      * @param view is the (?) image
      */
     public void rules(View view) {
