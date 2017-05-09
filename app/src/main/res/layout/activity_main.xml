@@ -62,29 +62,25 @@
 
                 <Button
                     android:id="@+id/dwarf3"
-                    style="@style/dwarvenButtons"
-                    android:onClick="dwarven"
                     android:tag="3"
+                    style="@style/dwarvenButtons"
                     android:text="@string/killachieftan" />
 
                 <Button
                     android:id="@+id/dwarf2"
-                    style="@style/dwarvenButtons"
-                    android:onClick="dwarven"
                     android:tag="2"
+                    style="@style/dwarvenButtons"
                     android:text="@string/persecuteraiders" />
 
                 <Button
                     android:id="@+id/dwarf1"
-                    style="@style/dwarvenButtons"
-                    android:onClick="dwarven"
                     android:tag="1"
+                    style="@style/dwarvenButtons"
                     android:text="@string/slaygrunts" />
 
                 <Button
                     android:id="@+id/dwarf0"
                     style="@style/dwarvenButtons"
-                    android:onClick="dwarvenCollect"
                     android:text="@string/harvest" />
 
             </LinearLayout>
@@ -130,29 +126,25 @@
 
                 <Button
                     android:id="@+id/orcish3"
-                    style="@style/orcishButtons"
-                    android:onClick="orcish"
                     android:tag="3"
+                    style="@style/orcishButtons"
                     android:text="@string/butchathane" />
 
                 <Button
                     android:id="@+id/orcish2"
-                    style="@style/orcishButtons"
-                    android:onClick="orcish"
                     android:tag="2"
+                    style="@style/orcishButtons"
                     android:text="@string/razeavillage" />
 
                 <Button
                     android:id="@+id/orcish1"
-                    style="@style/orcishButtons"
-                    android:onClick="orcish"
                     android:tag="1"
+                    style="@style/orcishButtons"
                     android:text="@string/murderpeons" />
 
                 <Button
                     android:id="@+id/orcish0"
                     style="@style/orcishButtons"
-                    android:onClick="orcishCollect"
                     android:text="@string/extruderesources" />
 
             </LinearLayout>
@@ -174,11 +166,11 @@
         <!-- Peace treaty button (Reset) -->
 
         <Button
+            android:id="@+id/button_peace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:backgroundTint="@android:color/holo_green_light"
-            android:onClick="peaceTreaty"
             android:text="@string/peacetreaty"
             tools:ignore="UnusedAttribute" />
 

@@ -76,7 +76,6 @@
                         <Button
                             android:id="@+id/dwarf3"
                             style="@style/dwarvenButtons"
-                            android:onClick="dwarven"
                             android:tag="3"
                             android:text="@string/killachieftan" />
                     </LinearLayout>
@@ -90,7 +89,6 @@
                         <Button
                             android:id="@+id/dwarf2"
                             style="@style/dwarvenButtons"
-                            android:onClick="dwarven"
                             android:tag="2"
                             android:text="@string/persecuteraiders" />
                     </LinearLayout>
@@ -109,7 +107,6 @@
                         <Button
                             android:id="@+id/dwarf1"
                             style="@style/dwarvenButtons"
-                            android:onClick="dwarven"
                             android:tag="1"
                             android:text="@string/slaygrunts" />
                     </LinearLayout>
@@ -122,7 +119,6 @@
                         <Button
                             android:id="@+id/dwarf0"
                             style="@style/dwarvenButtons"
-                            android:onClick="dwarvenCollect"
                             android:text="@string/harvest" />
                     </LinearLayout>
 
@@ -181,7 +177,6 @@
                         <Button
                             android:id="@+id/orcish3"
                             style="@style/orcishButtons"
-                            android:onClick="orcish"
                             android:tag="3"
                             android:text="@string/butchathane" />
                     </LinearLayout>
@@ -194,7 +189,6 @@
                         <Button
                             android:id="@+id/orcish2"
                             style="@style/orcishButtons"
-                            android:onClick="orcish"
                             android:tag="2"
                             android:text="@string/razeavillage" />
                     </LinearLayout>
@@ -213,7 +207,6 @@
                         <Button
                             android:id="@+id/orcish1"
                             style="@style/orcishButtons"
-                            android:onClick="orcish"
                             android:tag="1"
                             android:text="@string/murderpeons" />
                     </LinearLayout>
@@ -226,7 +219,6 @@
                         <Button
                             android:id="@+id/orcish0"
                             style="@style/orcishButtons"
-                            android:onClick="orcishCollect"
                             android:text="@string/extruderesources" />
                     </LinearLayout>
                 </LinearLayout>
@@ -240,7 +232,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:backgroundTint="@android:color/holo_green_light"
-            android:onClick="peaceTreaty"
+            android:id="@+id/button_peace"
             android:text="@string/peacetreaty"
             tools:ignore="UnusedAttribute" />
 

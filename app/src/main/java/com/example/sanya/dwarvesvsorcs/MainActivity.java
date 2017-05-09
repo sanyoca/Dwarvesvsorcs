@@ -11,7 +11,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static java.lang.String.valueOf;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     /**
      * Define global variables for storing the resources and the honor points, Buttons and other views
      */
@@ -39,22 +39,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /**
-         * Initializing the global views
-         */
+
+         // Initializing the global views
         dwarf0 = (Button) findViewById(R.id.dwarf0);
         dwarf1 = (Button) findViewById(R.id.dwarf1);
         dwarf2 = (Button) findViewById(R.id.dwarf2);
         dwarf3 = (Button) findViewById(R.id.dwarf3);
-
         orcish0 = (Button) findViewById(R.id.orcish0);
         orcish1 = (Button) findViewById(R.id.orcish1);
         orcish2 = (Button) findViewById(R.id.orcish2);
         orcish3 = (Button) findViewById(R.id.orcish3);
 
+        // setting the onclicklisteners
+        dwarf0.setOnClickListener(this);
+        dwarf1.setOnClickListener(this);
+        dwarf2.setOnClickListener(this);
+        dwarf3.setOnClickListener(this);
+        orcish0.setOnClickListener(this);
+        orcish1.setOnClickListener(this);
+        orcish2.setOnClickListener(this);
+        orcish3.setOnClickListener(this);
+        findViewById(R.id.button_peace).setOnClickListener(this);
+
+        // get the textviews that display the honors and resources
         dRes = (TextView) findViewById(R.id.dwarvenResources);
         oRes = (TextView) findViewById(R.id.orcishResources);
-
         dHon = (TextView) findViewById(R.id.dwarvenHonor);
         oHon = (TextView) findViewById(R.id.orcishHonor);
 
@@ -75,14 +84,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        int buttonClicked = v.getId();
+        switch (buttonClicked)   {
+            case R.id.button_peace:
+                peaceTreaty();
+                break;
+            case R.id.dwarf1:
+            case R.id.dwarf2:
+            case R.id.dwarf3:
+                dwarvesAttack(Integer.valueOf(v.getTag().toString()));
+                break;
+            case R.id.orcish1:
+            case R.id.orcish2:
+            case R.id.orcish3:
+                orcsAttack(Integer.valueOf(v.getTag().toString()));
+                break;
+            case R.id.dwarf0:
+                collect(0);
+                break;
+            case R.id.orcish0:
+                collect(1);
+                break;
+        }
+    }
+
     /**
      * This method is called when a dwarven button is clicked
-     *
-     * @param view is the view that was clicked on (default: the buttons on the dwarf side)
      */
-    public void dwarven(View view) {
-        //getting the multiplyer from the tag
-        int multiply = Integer.valueOf(view.getTag().toString());
+    public void dwarvesAttack(int multiply) {
         // generating the the attack and defense rolls
         int attackRoll = (int) ((Math.random() * 100) + 1);
         int defenseRoll = (int) ((Math.random() * 100) + 1);
@@ -108,12 +139,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method is called when an orcish button is clicked
-     *
-     * @param view is the view that was clicked on (default: the buttons on the orc side)
      */
-    public void orcish(View view) {
-        int multiply = Integer.valueOf(view.getTag().toString());
-        // generating the the attack and defense rolls
+    public void orcsAttack(int multiply) {
         int attackRoll = (int) ((Math.random() * 100) + 1);
         int defenseRoll = (int) ((Math.random() * 100) + 1);
         String report = "";
@@ -122,13 +149,13 @@ public class MainActivity extends AppCompatActivity {
         if (attackRoll >= defenseRoll) {
             report = getString(R.string.orcwin);
             orcishHonor = orcishHonor + multiply;
-            dwarvenResources = dwarvenResources - (defenseRoll * 10 * multiply);
-            orcishResources = orcishResources - ((attackRoll - defenseRoll) * 10 * multiply);
+            orcishResources = orcishResources - (defenseRoll * 10 * multiply);
+            dwarvenResources = dwarvenResources - ((attackRoll - defenseRoll) * 10 * multiply);
         } else {
             // if they lost
             report = getString(R.string.orclost);
-            dwarvenResources = dwarvenResources - (attackRoll * 10 * multiply);
-            orcishResources = orcishResources - ((defenseRoll - attackRoll) * 10 * multiply);
+            orcishResources = orcishResources - (attackRoll * 10 * multiply);
+            dwarvenResources = dwarvenResources - ((defenseRoll - attackRoll) * 10 * multiply);
         }
         // disable the orcs button - it's the dwarves' turn, so activate their buttons
         switchSides();
@@ -137,45 +164,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method for resource collection for the dwarves
-     *
-     * @param view the collect resources button for dwarves
+     * Method for resource collection
      */
-    public void dwarvenCollect(View view) {
+    public void collect(int whichSide) {
+        String report;
         // generating a random number of resources (500-1000)
         int collectedResources = 500 + (int) (Math.random() * 500) + 1;
         // adding it to the current resource value
-        dwarvenResources = dwarvenResources + collectedResources;
-        // disable the dwarf button - it's the orcs' turn, so activate their buttons
-        switchSides();
-        // displaying it, using report
-        String report = getString(R.string.dwarfharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
+        if(whichSide == 0) {
+            dwarvenResources = dwarvenResources + collectedResources;
+            report = getString(R.string.dwarfharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
+        }   else    {
+            orcishResources = orcishResources + collectedResources;
+            report = getString(R.string.orcharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
+        }
         displayReport(report);
-    }
-
-    /**
-     * Method for resource collection for the orcs
-     *
-     * @param view the collect resources button for the orcs
-     */
-    public void orcishCollect(View view) {
-        // generating a random number of resources (500-1000)
-        int collectedResources = 500 + (int) (Math.random() * 500) + 1;
-        // adding it to the current resource value
-        orcishResources = orcishResources + collectedResources;
-        // disable the orcs button - it's the dwarves' turn, so activate their buttons
         switchSides();
-        // displaying it, using report
-        String report = getString(R.string.orcharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
-        displayReport(report);
     }
 
     /**
      * This method is for resetting purposes, stating that the orcs and dwarves came to a peace agreement (lol)
-     *
-     * @param view the peace treaty button
      */
-    public void peaceTreaty(View view) {
+    public void peaceTreaty() {
         // setting the variables to their start state
         dwarvenResources = 10000;
         orcishResources = 10000;
@@ -183,12 +193,12 @@ public class MainActivity extends AppCompatActivity {
         orcishHonor = 0;
 
         // getting the resource TextViews and set their text to the variable value
-        dRes.setText(valueOf(dwarvenResources));
-        oRes.setText(valueOf(orcishResources));
+        dRes.setText(String.valueOf(dwarvenResources));
+        oRes.setText(String.valueOf(orcishResources));
 
         // doing the same for the honor points
-        oHon.setText(valueOf(orcishHonor));
-        dHon.setText(valueOf(dwarvenHonor));
+        oHon.setText(String.valueOf(orcishHonor));
+        dHon.setText(String.valueOf(dwarvenHonor));
         displayReport(getString(R.string.atpeace));
 
         // enable all buttons
@@ -201,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         dwarf2.setEnabled(true);
         dwarf3.setEnabled(true);
 
-        // the winning report views have to be gone
+        // the winning report views have to go
         TextView dWon = (TextView) findViewById(R.id.dwarvesWon);
         dWon.setVisibility(GONE);
         TextView oWon = (TextView) findViewById(R.id.orcsWon);
@@ -234,11 +244,11 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayReport(String r) {
         // displaying the resource changes on both sides
-        dRes.setText(valueOf(dwarvenResources));
-        oRes.setText(valueOf(orcishResources));
+        dRes.setText(String.valueOf(dwarvenResources));
+        oRes.setText(String.valueOf(orcishResources));
         // displaying the honor points change on both sides
-        dHon.setText(valueOf(dwarvenHonor));
-        oHon.setText(valueOf(orcishHonor));
+        dHon.setText(String.valueOf(dwarvenHonor));
+        oHon.setText(String.valueOf(orcishHonor));
 
         // if any of the resources dropped to 0 or below, the other side won
         if ((dwarvenResources <= 0) || (orcishResources <= 0)) {
@@ -360,4 +370,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Showrules.class);
         startActivity(intent);
     }
+
 }
