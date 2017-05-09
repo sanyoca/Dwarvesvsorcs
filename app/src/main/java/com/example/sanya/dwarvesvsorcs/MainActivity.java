@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         orcish1 = (Button) findViewById(R.id.orcish1);
         orcish2 = (Button) findViewById(R.id.orcish2);
         orcish3 = (Button) findViewById(R.id.orcish3);
+        // get the textviews that display the honors and resources
+        dRes = (TextView) findViewById(R.id.dwarvenResources);
+        oRes = (TextView) findViewById(R.id.orcishResources);
+        dHon = (TextView) findViewById(R.id.dwarvenHonor);
+        oHon = (TextView) findViewById(R.id.orcishHonor);
 
         // setting the onclicklisteners
         dwarf0.setOnClickListener(this);
@@ -61,12 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         orcish3.setOnClickListener(this);
         findViewById(R.id.button_peace).setOnClickListener(this);
         findViewById(R.id.showrules).setOnClickListener(this);
-
-        // get the textviews that display the honors and resources
-        dRes = (TextView) findViewById(R.id.dwarvenResources);
-        oRes = (TextView) findViewById(R.id.orcishResources);
-        dHon = (TextView) findViewById(R.id.dwarvenHonor);
-        oHon = (TextView) findViewById(R.id.orcishHonor);
 
         // which side starts? The other side's buttons will be disabled
         int start = (int) Math.random() * 100;
