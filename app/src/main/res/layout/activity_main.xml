@@ -15,7 +15,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,7 +94,8 @@
             <LinearLayout
                 style="@style/actionLayout"
                 android:layout_marginLeft="@dimen/small_margin"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="RtlHardcoded">
 
                 <!-- Orcish resources -->
 
@@ -166,7 +168,8 @@
             android:clickable="true"
             android:onClick="rules"
             android:padding="@dimen/small_margin"
-            android:src="@drawable/ic_info_black_24dp" />
+            android:src="@drawable/ic_info_black_24dp"
+            tools:ignore="ContentDescription" />
 
         <!-- Peace treaty button (Reset) -->
 
@@ -176,7 +179,8 @@
             android:layout_marginTop="@dimen/small_margin"
             android:backgroundTint="@android:color/holo_green_light"
             android:onClick="peaceTreaty"
-            android:text="@string/peacetreaty" />
+            android:text="@string/peacetreaty"
+            tools:ignore="UnusedAttribute" />
 
         <!-- The reports appear here -->
 

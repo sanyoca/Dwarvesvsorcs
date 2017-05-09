@@ -7,7 +7,8 @@
     android:background="@drawable/orcanddwarf"
     android:orientation="horizontal"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context="com.example.sanya.dwarvesvsorcs.MainActivity">
+    tools:context="com.example.sanya.dwarvesvsorcs.MainActivity"
+    android:baselineAligned="false">
     <!-- Background image from http://www.deviantart.com/art/Orc-VS-Dwarf-107639013 -->
 
 
@@ -63,7 +64,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -96,7 +98,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -131,7 +134,8 @@
             <LinearLayout
                 style="@style/actionLayout"
                 android:layout_marginLeft="@dimen/small_margin"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="RtlHardcoded">
 
                 <!-- Orcish resources -->
 
@@ -166,7 +170,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -197,7 +202,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -235,7 +241,8 @@
             android:layout_marginTop="@dimen/small_margin"
             android:backgroundTint="@android:color/holo_green_light"
             android:onClick="peaceTreaty"
-            android:text="@string/peacetreaty" />
+            android:text="@string/peacetreaty"
+            tools:ignore="UnusedAttribute" />
 
         <!-- The reports appear here -->
 
@@ -246,7 +253,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="RtlHardcoded">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -279,7 +287,8 @@
             android:clickable="true"
             android:onClick="rules"
             android:padding="@dimen/small_margin"
-            android:src="@drawable/ic_info_black_24dp" />
+            android:src="@drawable/ic_info_black_24dp"
+            tools:ignore="ContentDescription" />
 
     </RelativeLayout>
 
