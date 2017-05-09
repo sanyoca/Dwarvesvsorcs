@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         // Initializing the global views
+        // Initializing the global views
         dwarf0 = (Button) findViewById(R.id.dwarf0);
         dwarf1 = (Button) findViewById(R.id.dwarf1);
         dwarf2 = (Button) findViewById(R.id.dwarf2);
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         orcish2.setOnClickListener(this);
         orcish3.setOnClickListener(this);
         findViewById(R.id.button_peace).setOnClickListener(this);
+        findViewById(R.id.showrules).setOnClickListener(this);
 
         // get the textviews that display the honors and resources
         dRes = (TextView) findViewById(R.id.dwarvenResources);
@@ -86,8 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        int buttonClicked = v.getId();
-        switch (buttonClicked)   {
+        switch (v.getId()) {
             case R.id.button_peace:
                 peaceTreaty();
                 break;
@@ -106,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.orcish0:
                 collect(1);
+                break;
+            case R.id.showrules:
+                Intent intent = new Intent(this, Showrules.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -171,10 +175,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // generating a random number of resources (500-1000)
         int collectedResources = 500 + (int) (Math.random() * 500) + 1;
         // adding it to the current resource value
-        if(whichSide == 0) {
+        if (whichSide == 0) {
             dwarvenResources = dwarvenResources + collectedResources;
             report = getString(R.string.dwarfharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
-        }   else    {
+        } else {
             orcishResources = orcishResources + collectedResources;
             report = getString(R.string.orcharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
         }
@@ -360,15 +364,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         displayReport(" ");
     }
-
-    /**
-     * Show the rules, calling an intent
-     *
-     * @param view is the (?) image
-     */
-    public void rules(View view) {
-        Intent intent = new Intent(this, Showrules.class);
-        startActivity(intent);
-    }
-
 }

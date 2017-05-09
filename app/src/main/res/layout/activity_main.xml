@@ -62,20 +62,20 @@
 
                 <Button
                     android:id="@+id/dwarf3"
-                    android:tag="3"
                     style="@style/dwarvenButtons"
+                    android:tag="3"
                     android:text="@string/killachieftan" />
 
                 <Button
                     android:id="@+id/dwarf2"
-                    android:tag="2"
                     style="@style/dwarvenButtons"
+                    android:tag="2"
                     android:text="@string/persecuteraiders" />
 
                 <Button
                     android:id="@+id/dwarf1"
-                    android:tag="1"
                     style="@style/dwarvenButtons"
+                    android:tag="1"
                     android:text="@string/slaygrunts" />
 
                 <Button
@@ -126,20 +126,20 @@
 
                 <Button
                     android:id="@+id/orcish3"
-                    android:tag="3"
                     style="@style/orcishButtons"
+                    android:tag="3"
                     android:text="@string/butchathane" />
 
                 <Button
                     android:id="@+id/orcish2"
-                    android:tag="2"
                     style="@style/orcishButtons"
+                    android:tag="2"
                     android:text="@string/razeavillage" />
 
                 <Button
                     android:id="@+id/orcish1"
-                    android:tag="1"
                     style="@style/orcishButtons"
+                    android:tag="1"
                     android:text="@string/murderpeons" />
 
                 <Button
@@ -154,11 +154,11 @@
         <!-- info / rules -->
 
         <ImageView
+            android:id="@+id/showrules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
-            android:onClick="rules"
             android:padding="@dimen/small_margin"
             android:src="@drawable/ic_info_black_24dp"
             tools:ignore="ContentDescription" />

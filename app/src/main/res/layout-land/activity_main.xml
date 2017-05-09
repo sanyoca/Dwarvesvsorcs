@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/orcanddwarf"
+    android:baselineAligned="false"
     android:orientation="horizontal"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context="com.example.sanya.dwarvesvsorcs.MainActivity"
-    android:baselineAligned="false">
+    tools:context="com.example.sanya.dwarvesvsorcs.MainActivity">
     <!-- Background image from http://www.deviantart.com/art/Orc-VS-Dwarf-107639013 -->
 
 
@@ -64,34 +64,22 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false">
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/dwarf3"
+                        style="@style/dwarvenButtons"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:tag="3"
+                        android:text="@string/killachieftan" />
 
-                        <Button
-                            android:id="@+id/dwarf3"
-                            style="@style/dwarvenButtons"
-                            android:tag="3"
-                            android:text="@string/killachieftan" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/dwarf2"
+                        style="@style/dwarvenButtons"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/dwarf2"
-                            style="@style/dwarvenButtons"
-                            android:tag="2"
-                            android:text="@string/persecuteraiders" />
-                    </LinearLayout>
+                        android:tag="2"
+                        android:text="@string/persecuteraiders" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,28 +87,18 @@
                     android:layout_height="wrap_content"
                     android:baselineAligned="false">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                    <Button
+                        android:id="@+id/dwarf1"
+                        style="@style/dwarvenButtons"
+                        android:layout_weight="1"
+                        android:tag="1"
+                        android:text="@string/slaygrunts" />
 
-                        <Button
-                            android:id="@+id/dwarf1"
-                            style="@style/dwarvenButtons"
-                            android:tag="1"
-                            android:text="@string/slaygrunts" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <Button
-                            android:id="@+id/dwarf0"
-                            style="@style/dwarvenButtons"
-                            android:text="@string/harvest" />
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/dwarf0"
+                        style="@style/dwarvenButtons"
+                        android:layout_weight="1"
+                        android:text="@string/harvest" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -169,29 +147,19 @@
                     android:layout_height="wrap_content"
                     android:baselineAligned="false">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                    <Button
+                        android:id="@+id/orcish3"
+                        style="@style/orcishButtons"
+                        android:layout_weight="1"
+                        android:tag="3"
+                        android:text="@string/butchathane" />
 
-                        <Button
-                            android:id="@+id/orcish3"
-                            style="@style/orcishButtons"
-                            android:tag="3"
-                            android:text="@string/butchathane" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <Button
-                            android:id="@+id/orcish2"
-                            style="@style/orcishButtons"
-                            android:tag="2"
-                            android:text="@string/razeavillage" />
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/orcish2"
+                        style="@style/orcishButtons"
+                        android:layout_weight="1"
+                        android:tag="2"
+                        android:text="@string/razeavillage" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -199,28 +167,18 @@
                     android:layout_height="wrap_content"
                     android:baselineAligned="false">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                    <Button
+                        android:id="@+id/orcish1"
+                        style="@style/orcishButtons"
+                        android:layout_weight="1"
+                        android:tag="1"
+                        android:text="@string/murderpeons" />
 
-                        <Button
-                            android:id="@+id/orcish1"
-                            style="@style/orcishButtons"
-                            android:tag="1"
-                            android:text="@string/murderpeons" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <Button
-                            android:id="@+id/orcish0"
-                            style="@style/orcishButtons"
-                            android:text="@string/extruderesources" />
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/orcish0"
+                        style="@style/orcishButtons"
+                        android:layout_weight="1"
+                        android:text="@string/extruderesources" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -228,11 +186,11 @@
         <!-- Peace treaty button (Reset) -->
 
         <Button
+            android:id="@+id/button_peace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:backgroundTint="@android:color/holo_green_light"
-            android:id="@+id/button_peace"
             android:text="@string/peacetreaty"
             tools:ignore="UnusedAttribute" />
 
@@ -272,12 +230,12 @@
         </LinearLayout>
         <!-- info / rules -->
         <ImageView
+            android:id="@+id/showrules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:clickable="true"
-            android:onClick="rules"
             android:padding="@dimen/small_margin"
             android:src="@drawable/ic_info_black_24dp"
             tools:ignore="ContentDescription" />
