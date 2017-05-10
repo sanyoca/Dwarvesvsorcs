@@ -68,11 +68,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_peace).setOnClickListener(this);
         findViewById(R.id.showrules).setOnClickListener(this);
 
-        // Set the custom font, source: http://www.fontspace.com/pete-klassen/ringbearer
+        // Set the custom font for all the views, source: http://www.fontspace.com/pete-klassen/ringbearer
         Typeface fancyFont;
         fancyFont = Typeface.createFromAsset(getAssets(), "fonts/ringbearer.ttf");
+
         ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_dwarfhonor)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_orchonor)).setTypeface(fancyFont);
         textOrcishHonor.setTypeface(fancyFont);
         textDwarvenHonor.setTypeface(fancyFont);
         textOrcishRes.setTypeface(fancyFont);
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.report)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.whoWon)).setTypeface(fancyFont);
 
+        // Set the custom font for the buttons as well
         ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
         buttonDwarf0.setTypeface(fancyFont);
         buttonDwarf1.setTypeface(fancyFont);
