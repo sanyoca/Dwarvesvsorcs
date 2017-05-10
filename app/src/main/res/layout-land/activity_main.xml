@@ -38,6 +38,7 @@
                     android:background="@android:color/black">
 
                     <TextView
+                        android:id="@+id/text_res_dwarf"
                         style="@style/resourceStyle"
                         android:text="@string/resources" />
 
@@ -56,6 +57,7 @@
                     android:text="@string/zero" />
 
                 <TextView
+                    android:id="@+id/text_dwarfhonor"
                     style="@style/honorTextStyle"
                     android:text="@string/honor" />
 
@@ -92,6 +94,7 @@
                         style="@style/dwarvenButtons"
                         android:layout_weight="1"
                         android:tag="1"
+                        android:minLines="2"
                         android:text="@string/slaygrunts" />
 
                     <Button
@@ -119,6 +122,7 @@
                     android:background="@android:color/black">
 
                     <TextView
+                        android:id="@+id/text_res_orc"
                         style="@style/resourceStyle"
                         android:text="@string/resources" />
 
@@ -137,6 +141,7 @@
                     android:text="@string/zero" />
 
                 <TextView
+                    android:id="@+id/text_orchonor"
                     style="@style/honorTextStyle"
                     android:text="@string/honor" />
 
@@ -206,24 +211,20 @@
         android:orientation="vertical"
         tools:ignore="RtlHardcoded">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_centerInParent="true"
+            android:background="@color/trans_white"
+            android:textColor="@android:color/black" />
 
-            <TextView
-                android:id="@+id/report"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/trans_white"
-                android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/whoWon"
+            style="@style/victory"
+            android:layout_centerInParent="true"
+            android:text="@string/orcswon" />
 
-            <TextView
-                android:id="@+id/whoWon"
-                style="@style/victory"
-                android:text="@string/orcswon" />
-
-        </LinearLayout>
         <!-- info / rules -->
         <ImageView
             android:id="@+id/showrules"

@@ -1,6 +1,7 @@
 package com.example.sanya.dwarvesvsorcs;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -67,6 +68,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_peace).setOnClickListener(this);
         findViewById(R.id.showrules).setOnClickListener(this);
 
+        // set the custom font, source: http://www.fontspace.com/pete-klassen/ringbearer
+        Typeface fancyFont;
+        fancyFont = Typeface.createFromAsset(getAssets(), "fonts/ringbearer.ttf");
+        ((TextView) findViewById(R.id.orcishHonor)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.dwarvenHonor)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_orchonor)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_dwarfhonor)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.orcishResources)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.dwarvenResources)).setTypeface(fancyFont);
+        ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.report)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.whoWon)).setTypeface(fancyFont);
+
+        dwarf0.setTypeface(fancyFont);
+        dwarf1.setTypeface(fancyFont);
+        dwarf2.setTypeface(fancyFont);
+        dwarf3.setTypeface(fancyFont);
+        orcish0.setTypeface(fancyFont);
+        orcish1.setTypeface(fancyFont);
+        orcish2.setTypeface(fancyFont);
+        orcish3.setTypeface(fancyFont);
+
         // which side starts? The other side's buttons will be disabled
         int start = (int) (Math.random() * 100)+1;
         if (start <= 50) {
@@ -131,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // if the dwarves (the attackers) won
         if (attackRoll >= defenseRoll) {
-            report = getString(R.string.dwarfwin);
+            report = getString(R.string.dwarfwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
             dwarvenHonor = dwarvenHonor + multiply;
             dwarvenResources = dwarvenResources - (defenseRoll * 10 * multiply);
             orcishResources = orcishResources - ((attackRoll - defenseRoll) * 10 * multiply);
@@ -159,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // if the orcs (the attackers) won
         if (attackRoll >= defenseRoll) {
-            report = getString(R.string.orcwin);
+            report = getString(R.string.orcwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
             orcishHonor = orcishHonor + multiply;
             orcishResources = orcishResources - (defenseRoll * 10 * multiply);
             dwarvenResources = dwarvenResources - ((attackRoll - defenseRoll) * 10 * multiply);
@@ -260,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dHon.setText(String.valueOf(dwarvenHonor));
         oHon.setText(String.valueOf(orcishHonor));
 
-        // if any of the resources dropped to 0 or below, the other side won
+        // if any of the resources dropped to 0 or below, check the honor points to determine the winner
         if ((dwarvenResources <= 0) || (orcishResources <= 0)) {
             // disable all buttons
             orcish1.setEnabled(false);
@@ -271,30 +296,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             dwarf1.setEnabled(false);
             dwarf2.setEnabled(false);
             dwarf3.setEnabled(false);
+            TextView whoWon = (TextView) findViewById(R.id.whoWon);
+
+            // the report view has to go
+            TextView rep = (TextView) findViewById(R.id.report);
+            rep.setVisibility(GONE);
 
             // make the correct winner view visible
             if (dwarvenHonor > orcishHonor) { // the dwarves won
-                TextView rep = (TextView) findViewById(R.id.report);
-                rep.setVisibility(GONE);
-                TextView dWon = (TextView) findViewById(R.id.whoWon);
-                dWon.setText(R.string.dwarveswon);
-                dWon.setVisibility(VISIBLE);
+                whoWon.setText(R.string.dwarveswon);
+                whoWon.setVisibility(VISIBLE);
             }
 
             if (orcishHonor > dwarvenHonor) { // the orcs won
-                TextView rep = (TextView) findViewById(R.id.report);
-                rep.setVisibility(GONE);
-                TextView oWon = (TextView) findViewById(R.id.whoWon);
-                oWon.setText(R.string.orcswon);
-                oWon.setVisibility(VISIBLE);
+                // report view has to go
+                whoWon.setText(R.string.orcswon);
+                whoWon.setVisibility(VISIBLE);
             }
 
             if (orcishHonor == dwarvenHonor) { // tie
-                TextView rep = (TextView) findViewById(R.id.report);
-                rep.setVisibility(GONE);
                 r = r + "\n" + getString(R.string.nowinner);
             }
         }
+
         // displaying the report text
         TextView rep = (TextView) findViewById(R.id.report);
         rep.setText(r);
