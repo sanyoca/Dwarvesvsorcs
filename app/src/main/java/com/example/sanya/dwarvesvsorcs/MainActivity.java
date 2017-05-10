@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.showrules).setOnClickListener(this);
 
         // which side starts? The other side's buttons will be disabled
-        int start = (int) Math.random() * 100;
+        int start = (int) (Math.random() * 100)+1;
         if (start <= 50) {
             orcish0.setEnabled(!orcish0.isEnabled());
             orcish1.setEnabled(!orcish1.isEnabled());
@@ -87,25 +87,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            // they made peace - and again: lol
             case R.id.button_peace:
                 peaceTreaty();
                 break;
+            // the dwarves attack
             case R.id.dwarf1:
             case R.id.dwarf2:
             case R.id.dwarf3:
                 dwarvesAttack(Integer.valueOf(v.getTag().toString()));
                 break;
+            // the orcs attack
             case R.id.orcish1:
             case R.id.orcish2:
             case R.id.orcish3:
                 orcsAttack(Integer.valueOf(v.getTag().toString()));
                 break;
+            // the dwarves collect resources
             case R.id.dwarf0:
                 collect(0);
                 break;
+            // the orcs collect resources
             case R.id.orcish0:
                 collect(1);
                 break;
+            // display the rules in a new activity
             case R.id.showrules:
                 Intent intent = new Intent(this, Showrules.class);
                 startActivity(intent);
@@ -120,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // generating the the attack and defense rolls
         int attackRoll = (int) ((Math.random() * 100) + 1);
         int defenseRoll = (int) ((Math.random() * 100) + 1);
-        String report = "";
+        String report;
 
         // if the dwarves (the attackers) won
         if (attackRoll >= defenseRoll) {
@@ -144,9 +150,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * This method is called when an orcish button is clicked
      */
     public void orcsAttack(int multiply) {
+        // generating the the attack and defense rolls
         int attackRoll = (int) ((Math.random() * 100) + 1);
         int defenseRoll = (int) ((Math.random() * 100) + 1);
-        String report = "";
+        String report;
 
         // if the orcs (the attackers) won
         if (attackRoll >= defenseRoll) {
@@ -168,6 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * Method for resource collection
+     * @param whichSide shows which side (0:dwarves, 1:orcs) collected resources
      */
     public void collect(int whichSide) {
         String report;
@@ -224,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rep.setVisibility(VISIBLE);
 
         // which side starts next time? The other side's buttons will be disabled
-        int start = (int) Math.random() * 100;
+        int start = (int) (Math.random() * 100)+1;
         if (start <= 50) {
             orcish0.setEnabled(!orcish0.isEnabled());
             orcish1.setEnabled(!orcish1.isEnabled());
@@ -310,7 +318,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * On screen rotation - or anything that stops the run of the app - save the current status of the app
      *
-     * @param savedInstanceState
+     * @param savedInstanceState a bundle
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -328,7 +336,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * When the app restarts, restore the values
      *
-     * @param savedInstanceState
+     * @param savedInstanceState a bundle
      */
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
