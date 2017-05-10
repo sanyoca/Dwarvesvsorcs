@@ -19,9 +19,6 @@
     <string name="orcwin">The orcs attacked and won.\n</string>
     <string name="dwarfwin">The dwarves attacked and won.\n</string>
     <string name="dwarflost">The dwarves attacked and lost.\n</string>
-    <string name="attack">Attack:</string>
-    <string name="defense">Defense:</string>
-    <string name="multiply">Multiply:</string>
     <string name="dwarfharvest">The dwarves successfully harvested</string>
     <string name="orcharvest">The orcs successfully harvested</string>
     <string name="harvestres">resources</string>
