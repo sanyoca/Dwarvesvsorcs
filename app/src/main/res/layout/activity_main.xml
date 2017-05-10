@@ -18,19 +18,18 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
+        <!-- Layout for the two sides -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <!-- The dwarven upper/action layout (Left side) -->
-
             <LinearLayout
                 style="@style/actionLayout"
                 android:orientation="vertical">
 
                 <!-- Dwarven resources -->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -49,7 +48,6 @@
                 </LinearLayout>
 
                 <!-- Dwarven honor -->
-
                 <TextView
                     android:id="@+id/dwarvenHonor"
                     style="@style/honorPointsStyle"
@@ -61,7 +59,6 @@
                     android:text="@string/honor" />
 
                 <!-- Dwarven action buttons -->
-
                 <Button
                     android:id="@+id/dwarf3"
                     style="@style/dwarvenButtons"
@@ -88,7 +85,6 @@
             </LinearLayout>
 
             <!-- The orcish upper/action layout (Right side) -->
-
             <LinearLayout
                 style="@style/actionLayout"
                 android:layout_marginLeft="@dimen/small_margin"
@@ -96,7 +92,6 @@
                 tools:ignore="RtlHardcoded">
 
                 <!-- Orcish resources -->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,7 +110,6 @@
                 </LinearLayout>
 
                 <!-- Orcish honor -->
-
                 <TextView
                     android:id="@+id/orcishHonor"
                     style="@style/honorPointsStyle"
@@ -127,7 +121,6 @@
                     android:text="@string/honor" />
 
                 <!-- Orcish action buttons -->
-
                 <Button
                     android:id="@+id/orcish3"
                     style="@style/orcishButtons"
@@ -155,8 +148,7 @@
 
         </LinearLayout>
 
-        <!-- info / rules -->
-
+        <!-- Info / rules -->
         <ImageView
             android:id="@+id/showrules"
             android:layout_width="wrap_content"
@@ -168,7 +160,6 @@
             tools:ignore="ContentDescription" />
 
         <!-- Peace treaty button (Reset) -->
-
         <Button
             android:id="@+id/button_peace"
             android:layout_width="match_parent"
@@ -179,7 +170,6 @@
             tools:ignore="UnusedAttribute" />
 
         <!-- The reports appear here -->
-
         <TextView
             android:id="@+id/report"
             android:layout_width="match_parent"
@@ -187,6 +177,7 @@
             android:background="@color/trans_white"
             android:textColor="@android:color/black" />
 
+        <!-- The winner view -->
         <TextView
             android:id="@+id/whoWon"
             style="@style/victory"

@@ -12,26 +12,25 @@
     <!-- Background image from http://www.deviantart.com/art/Orc-VS-Dwarf-107639013 -->
 
 
-    <!-- Layout for the upper/action layout -->
+    <!-- Layout for the left side -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:orientation="vertical">
 
+        <!-- Layout for the two sides -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- The dwarven upper/action layout (Left side) -->
-
+            <!-- The dwarven side -->
             <LinearLayout
                 style="@style/actionLayout"
                 android:orientation="vertical">
 
                 <!-- Dwarven resources -->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,7 +60,7 @@
                     style="@style/honorTextStyle"
                     android:text="@string/honor" />
 
-                <!-- Dwarven action buttons -->
+                <!-- Dwarven action buttons 1st line -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,6 +83,7 @@
                         android:text="@string/persecuteraiders" />
                 </LinearLayout>
 
+                <!-- Dwarven action buttons 2nd line -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -93,8 +93,8 @@
                         android:id="@+id/dwarf1"
                         style="@style/dwarvenButtons"
                         android:layout_weight="1"
-                        android:tag="1"
                         android:minLines="2"
+                        android:tag="1"
                         android:text="@string/slaygrunts" />
 
                     <Button
@@ -104,10 +104,10 @@
                         android:text="@string/harvest" />
 
                 </LinearLayout>
+
             </LinearLayout>
 
-            <!-- The orcish upper/action layout (Right side) -->
-
+            <!-- The orcish side -->
             <LinearLayout
                 style="@style/actionLayout"
                 android:layout_marginLeft="@dimen/small_margin"
@@ -145,7 +145,7 @@
                     style="@style/honorTextStyle"
                     android:text="@string/honor" />
 
-                <!-- Orcish action buttons -->
+                <!-- Orcish action buttons 1st line -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -167,6 +167,7 @@
                         android:text="@string/razeavillage" />
                 </LinearLayout>
 
+                <!-- Orcish action buttons 2nd line -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -185,7 +186,9 @@
                         android:layout_weight="1"
                         android:text="@string/extruderesources" />
                 </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
 
         <!-- Peace treaty button (Reset) -->
@@ -199,10 +202,9 @@
             android:text="@string/peacetreaty"
             tools:ignore="UnusedAttribute" />
 
-        <!-- The reports appear here -->
-
     </LinearLayout>
 
+    <!-- The reports and the winner appear here -->
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -211,6 +213,7 @@
         android:orientation="vertical"
         tools:ignore="RtlHardcoded">
 
+        <!-- The report view -->
         <TextView
             android:id="@+id/report"
             android:layout_width="match_parent"
@@ -219,13 +222,14 @@
             android:background="@color/trans_white"
             android:textColor="@android:color/black" />
 
+        <!-- The winner view -->
         <TextView
             android:id="@+id/whoWon"
             style="@style/victory"
             android:layout_centerInParent="true"
             android:text="@string/orcswon" />
 
-        <!-- info / rules -->
+        <!-- Info / rules 'button' -->
         <ImageView
             android:id="@+id/showrules"
             android:layout_width="wrap_content"
@@ -238,5 +242,4 @@
             tools:ignore="ContentDescription" />
 
     </RelativeLayout>
-
 </LinearLayout>
