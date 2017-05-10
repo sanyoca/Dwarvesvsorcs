@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            // they made peace - and again: lol
+            // they made peace - lol
             case R.id.button_peace:
                 peaceTreaty();
                 break;
@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method is called when a dwarven button is clicked
+     * @param multiply shows the difficulty and therefore the loss/win resource multiplier and the honor points that could be gained
      */
     public void dwarvesAttack(int multiply) {
         // generating the the attack and defense rolls
@@ -148,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method is called when an orcish button is clicked
+     * @param multiply shows the difficulty and therefore the loss/win resource multiplier and the honor points that could be gained
      */
     public void orcsAttack(int multiply) {
         // generating the the attack and defense rolls
@@ -194,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * This method is for resetting purposes, stating that the orcs and dwarves came to a peace agreement (lol)
+     * This method is for resetting purposes, stating that the orcs and dwarves came to a peace agreement (and again: lol)
      */
     public void peaceTreaty() {
         // setting the variables to their start state
@@ -223,10 +225,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dwarf3.setEnabled(true);
 
         // the winning report views have to go
-        TextView dWon = (TextView) findViewById(R.id.dwarvesWon);
-        dWon.setVisibility(GONE);
-        TextView oWon = (TextView) findViewById(R.id.orcsWon);
-        oWon.setVisibility(GONE);
+        TextView whoWon = (TextView) findViewById(R.id.whoWon);
+        whoWon.setVisibility(GONE);
         // the normal report view (now with the peace treaty message) has to appear
         TextView rep = (TextView) findViewById(R.id.report);
         rep.setVisibility(VISIBLE);
@@ -250,7 +250,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method displays reports.
-     *
      * @param r the report to be displayed
      */
     private void displayReport(String r) {
@@ -277,18 +276,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (dwarvenHonor > orcishHonor) { // the dwarves won
                 TextView rep = (TextView) findViewById(R.id.report);
                 rep.setVisibility(GONE);
-                TextView dWon = (TextView) findViewById(R.id.dwarvesWon);
+                TextView dWon = (TextView) findViewById(R.id.whoWon);
+                dWon.setText(R.string.dwarveswon);
                 dWon.setVisibility(VISIBLE);
             }
 
             if (orcishHonor > dwarvenHonor) { // the orcs won
                 TextView rep = (TextView) findViewById(R.id.report);
                 rep.setVisibility(GONE);
-                TextView oWon = (TextView) findViewById(R.id.orcsWon);
+                TextView oWon = (TextView) findViewById(R.id.whoWon);
+                oWon.setText(R.string.orcswon);
                 oWon.setVisibility(VISIBLE);
             }
 
             if (orcishHonor == dwarvenHonor) { // tie
+                TextView rep = (TextView) findViewById(R.id.report);
+                rep.setVisibility(GONE);
                 r = r + "\n" + getString(R.string.nowinner);
             }
         }

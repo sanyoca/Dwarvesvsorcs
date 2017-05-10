@@ -219,14 +219,10 @@
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:id="@+id/orcsWon"
+                android:id="@+id/whoWon"
                 style="@style/victory"
                 android:text="@string/orcswon" />
 
-            <TextView
-                android:id="@+id/dwarvesWon"
-                style="@style/victory"
-                android:text="@string/dwarveswon" />
         </LinearLayout>
         <!-- info / rules -->
         <ImageView
