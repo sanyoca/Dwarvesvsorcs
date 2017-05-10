@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * This method is called when a dwarven button is clicked
+     * This method is called when a dwarven action is executed
      *
      * @param multiply shows the difficulty and therefore the loss/win resource multiplier and the honor points that could be gained
      */
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * This method is called when an orcish button is clicked
+     * This method is called when an orcish action is executed
      *
      * @param multiply shows the difficulty and therefore the loss/win resource multiplier and the honor points that could be gained
      */
@@ -363,8 +363,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         savedInstanceState.putInt("intDwarvenHonor", intDwarvenHonor);
         savedInstanceState.putInt("intOrcishHonor", intOrcishHonor);
         savedInstanceState.putInt("intActiveGroup", intActiveGroup);
-        String stringReport = ((TextView) findViewById(R.id.report)).getText().toString();
-        savedInstanceState.putString("stringReport", stringReport);
+        savedInstanceState.putString("stringReport", ((TextView) findViewById(R.id.report)).getText().toString());
     }
 
     /**
