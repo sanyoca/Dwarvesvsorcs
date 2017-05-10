@@ -13,9 +13,8 @@ import static android.view.View.VISIBLE;
 import static java.lang.String.valueOf;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    /**
-     * Define global variables for storing the resources and the honor points, Buttons and other views
-     */
+
+     // Define global variables for storing the resources and the honor points, Buttons and other views
     int intDwarvenRes = 10000;
     int intOrcishRes = 10000;
     int intDwarvenHonor = 0;
