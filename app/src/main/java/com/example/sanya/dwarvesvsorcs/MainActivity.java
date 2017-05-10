@@ -156,17 +156,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int defenseRoll = (int) ((Math.random() * 100) + 1);
         String report;
 
+        intDwarvenRes = intDwarvenRes - (defenseRoll * 10 * multiply);
+        intOrcishRes = intOrcishRes - ((attackRoll - defenseRoll) * 10 * multiply);
+
         // If the dwarves (the attackers) won
         if (attackRoll >= defenseRoll) {
             report = getString(R.string.dwarfwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
             intDwarvenHonor = intDwarvenHonor + multiply;
-            intDwarvenRes = intDwarvenRes - (defenseRoll * 10 * multiply);
-            intOrcishRes = intOrcishRes - ((attackRoll - defenseRoll) * 10 * multiply);
         } else {
             // If they lost
             report = getString(R.string.dwarflost);
-            intDwarvenRes = intDwarvenRes - (attackRoll * 10 * multiply);
-            intOrcishRes = intOrcishRes - ((defenseRoll - attackRoll) * 10 * multiply);
         }
         // Disable the dwarves button - it's the orcs' turn, so activate their buttons
         switchSides();
@@ -185,22 +184,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int defenseRoll = (int) ((Math.random() * 100) + 1);
         String report;
 
+        intOrcishRes = intOrcishRes - (defenseRoll * 10 * multiply);
+        intDwarvenRes = intDwarvenRes - ((attackRoll - defenseRoll) * 10 * multiply);
+
         // If the orcs (the attackers) won
         if (attackRoll >= defenseRoll) {
             report = getString(R.string.orcwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
             intOrcishHonor = intOrcishHonor + multiply;
-            intOrcishRes = intOrcishRes - (defenseRoll * 10 * multiply);
-            intDwarvenRes = intDwarvenRes - ((attackRoll - defenseRoll) * 10 * multiply);
         } else {
             // If they lost
             report = getString(R.string.orclost);
-            intOrcishRes = intOrcishRes - (attackRoll * 10 * multiply);
-            intDwarvenRes = intDwarvenRes - ((defenseRoll - attackRoll) * 10 * multiply);
         }
-        // Disable the orcs button - it's the dwarves' turn, so activate their buttons
-        switchSides();
         // Displaying report
         displayReport(report);
+
+        // Disable the orcs button - it's the dwarves' turn, so activate their buttons
+        switchSides();
     }
 
     /**
@@ -220,7 +219,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intOrcishRes = intOrcishRes + collectedResources;
             report = getString(R.string.orcharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
         }
+        // Displaying report
         displayReport(report);
+
+        // whatever side was active, it's the other's turn now
         switchSides();
     }
 
@@ -323,7 +325,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        // Displaying the report text
+        // Displaying the report text, if nobody won yet
         TextView rep = (TextView) findViewById(R.id.report);
         rep.setText(r);
     }
@@ -332,7 +334,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * This method switches between the dwarf/orc side in turns
      */
     private void switchSides() {
-        // Switch the states of the buttons
+        // Switches the states of the buttons
         buttonOrcish0.setEnabled(!buttonOrcish0.isEnabled());
         buttonOrcish1.setEnabled(!buttonOrcish1.isEnabled());
         buttonOrcish2.setEnabled(!buttonOrcish2.isEnabled());
@@ -342,7 +344,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDwarf1.setEnabled(!buttonDwarf1.isEnabled());
         buttonDwarf2.setEnabled(!buttonDwarf2.isEnabled());
         buttonDwarf3.setEnabled(!buttonDwarf3.isEnabled());
-        // And switch group (0: dwarves, 1: orcs)
+        // And switches group (0: dwarves, 1: orcs)
         intActiveGroup = 1 - intActiveGroup;
     }
 
