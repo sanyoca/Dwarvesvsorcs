@@ -16,25 +16,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * Define global variables for storing the resources and the honor points, Buttons and other views
      */
-    int dwarvenResources = 10000;
-    int orcishResources = 10000;
-    int dwarvenHonor = 0;
-    int orcishHonor = 0;
-    int activeGroup = 0;
+    int intDwarvenRes = 10000;
+    int intOrcishRes = 10000;
+    int intDwarvenHonor = 0;
+    int intOrcishHonor = 0;
+    int intActiveGroup = 0;
 
-    Button dwarf0;
-    Button dwarf1;
-    Button dwarf2;
-    Button dwarf3;
-    Button orcish0;
-    Button orcish1;
-    Button orcish2;
-    Button orcish3;
+    Button buttonDwarf0;
+    Button buttonDwarf1;
+    Button buttonDwarf2;
+    Button buttonDwarf3;
+    Button buttonOrcish0;
+    Button buttonOrcish1;
+    Button buttonOrcish2;
+    Button buttonOrcish3;
 
-    TextView dRes;
-    TextView oRes;
-    TextView dHon;
-    TextView oHon;
+    TextView textDwarvenRes;
+    TextView textOrcishRes;
+    TextView textDwarvenHonor;
+    TextView textOrcishHonor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,70 +42,68 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         // Initializing the global views
-        dwarf0 = (Button) findViewById(R.id.dwarf0);
-        dwarf1 = (Button) findViewById(R.id.dwarf1);
-        dwarf2 = (Button) findViewById(R.id.dwarf2);
-        dwarf3 = (Button) findViewById(R.id.dwarf3);
-        orcish0 = (Button) findViewById(R.id.orcish0);
-        orcish1 = (Button) findViewById(R.id.orcish1);
-        orcish2 = (Button) findViewById(R.id.orcish2);
-        orcish3 = (Button) findViewById(R.id.orcish3);
+        buttonDwarf0 = (Button) findViewById(R.id.dwarf0);
+        buttonDwarf1 = (Button) findViewById(R.id.dwarf1);
+        buttonDwarf2 = (Button) findViewById(R.id.dwarf2);
+        buttonDwarf3 = (Button) findViewById(R.id.dwarf3);
+        buttonOrcish0 = (Button) findViewById(R.id.orcish0);
+        buttonOrcish1 = (Button) findViewById(R.id.orcish1);
+        buttonOrcish2 = (Button) findViewById(R.id.orcish2);
+        buttonOrcish3 = (Button) findViewById(R.id.orcish3);
         // get the textviews that display the honors and resources
-        dRes = (TextView) findViewById(R.id.dwarvenResources);
-        oRes = (TextView) findViewById(R.id.orcishResources);
-        dHon = (TextView) findViewById(R.id.dwarvenHonor);
-        oHon = (TextView) findViewById(R.id.orcishHonor);
+        textDwarvenRes = (TextView) findViewById(R.id.dwarvenResources);
+        textOrcishRes = (TextView) findViewById(R.id.orcishResources);
+        textDwarvenHonor = (TextView) findViewById(R.id.dwarvenHonor);
+        textOrcishHonor = (TextView) findViewById(R.id.orcishHonor);
 
         // Setting the onclicklisteners
-        dwarf0.setOnClickListener(this);
-        dwarf1.setOnClickListener(this);
-        dwarf2.setOnClickListener(this);
-        dwarf3.setOnClickListener(this);
-        orcish0.setOnClickListener(this);
-        orcish1.setOnClickListener(this);
-        orcish2.setOnClickListener(this);
-        orcish3.setOnClickListener(this);
+        buttonDwarf0.setOnClickListener(this);
+        buttonDwarf1.setOnClickListener(this);
+        buttonDwarf2.setOnClickListener(this);
+        buttonDwarf3.setOnClickListener(this);
+        buttonOrcish0.setOnClickListener(this);
+        buttonOrcish1.setOnClickListener(this);
+        buttonOrcish2.setOnClickListener(this);
+        buttonOrcish3.setOnClickListener(this);
         findViewById(R.id.button_peace).setOnClickListener(this);
         findViewById(R.id.showrules).setOnClickListener(this);
 
         // Set the custom font, source: http://www.fontspace.com/pete-klassen/ringbearer
         Typeface fancyFont;
         fancyFont = Typeface.createFromAsset(getAssets(), "fonts/ringbearer.ttf");
-        ((TextView) findViewById(R.id.orcishHonor)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.dwarvenHonor)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_orchonor)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_dwarfhonor)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.orcishResources)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.dwarvenResources)).setTypeface(fancyFont);
+        textOrcishHonor.setTypeface(fancyFont);
+        textDwarvenHonor.setTypeface(fancyFont);
+        textOrcishRes.setTypeface(fancyFont);
+        textDwarvenRes.setTypeface(fancyFont);
         ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.report)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.whoWon)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
 
-        dwarf0.setTypeface(fancyFont);
-        dwarf1.setTypeface(fancyFont);
-        dwarf2.setTypeface(fancyFont);
-        dwarf3.setTypeface(fancyFont);
-        orcish0.setTypeface(fancyFont);
-        orcish1.setTypeface(fancyFont);
-        orcish2.setTypeface(fancyFont);
-        orcish3.setTypeface(fancyFont);
+        buttonDwarf0.setTypeface(fancyFont);
+        buttonDwarf1.setTypeface(fancyFont);
+        buttonDwarf2.setTypeface(fancyFont);
+        buttonDwarf3.setTypeface(fancyFont);
+        buttonOrcish0.setTypeface(fancyFont);
+        buttonOrcish1.setTypeface(fancyFont);
+        buttonOrcish2.setTypeface(fancyFont);
+        buttonOrcish3.setTypeface(fancyFont);
 
         // Which side starts? The other side's buttons will be disabled
         int start = (int) (Math.random() * 100)+1;
         if (start <= 50) {
-            orcish0.setEnabled(!orcish0.isEnabled());
-            orcish1.setEnabled(!orcish1.isEnabled());
-            orcish2.setEnabled(!orcish2.isEnabled());
-            orcish3.setEnabled(!orcish3.isEnabled());
-            activeGroup = 0; // The dwarves begin
+            buttonOrcish0.setEnabled(!buttonOrcish0.isEnabled());
+            buttonOrcish1.setEnabled(!buttonOrcish1.isEnabled());
+            buttonOrcish2.setEnabled(!buttonOrcish2.isEnabled());
+            buttonOrcish3.setEnabled(!buttonOrcish3.isEnabled());
+            intActiveGroup = 0; // The dwarves begin
         } else {
-            dwarf0.setEnabled(!dwarf0.isEnabled());
-            dwarf1.setEnabled(!dwarf1.isEnabled());
-            dwarf2.setEnabled(!dwarf2.isEnabled());
-            dwarf3.setEnabled(!dwarf3.isEnabled());
-            activeGroup = 1; // The orcs begin
+            buttonDwarf0.setEnabled(!buttonDwarf0.isEnabled());
+            buttonDwarf1.setEnabled(!buttonDwarf1.isEnabled());
+            buttonDwarf2.setEnabled(!buttonDwarf2.isEnabled());
+            buttonDwarf3.setEnabled(!buttonDwarf3.isEnabled());
+            intActiveGroup = 1; // The orcs begin
         }
     }
 
@@ -157,14 +155,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // If the dwarves (the attackers) won
         if (attackRoll >= defenseRoll) {
             report = getString(R.string.dwarfwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
-            dwarvenHonor = dwarvenHonor + multiply;
-            dwarvenResources = dwarvenResources - (defenseRoll * 10 * multiply);
-            orcishResources = orcishResources - ((attackRoll - defenseRoll) * 10 * multiply);
+            intDwarvenHonor = intDwarvenHonor + multiply;
+            intDwarvenRes = intDwarvenRes - (defenseRoll * 10 * multiply);
+            intOrcishRes = intOrcishRes - ((attackRoll - defenseRoll) * 10 * multiply);
         } else {
             // If they lost
             report = getString(R.string.dwarflost);
-            dwarvenResources = dwarvenResources - (attackRoll * 10 * multiply);
-            orcishResources = orcishResources - ((defenseRoll - attackRoll) * 10 * multiply);
+            intDwarvenRes = intDwarvenRes - (attackRoll * 10 * multiply);
+            intOrcishRes = intOrcishRes - ((defenseRoll - attackRoll) * 10 * multiply);
         }
         // Disable the dwarves button - it's the orcs' turn, so activate their buttons
         switchSides();
@@ -185,14 +183,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // If the orcs (the attackers) won
         if (attackRoll >= defenseRoll) {
             report = getString(R.string.orcwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
-            orcishHonor = orcishHonor + multiply;
-            orcishResources = orcishResources - (defenseRoll * 10 * multiply);
-            dwarvenResources = dwarvenResources - ((attackRoll - defenseRoll) * 10 * multiply);
+            intOrcishHonor = intOrcishHonor + multiply;
+            intOrcishRes = intOrcishRes - (defenseRoll * 10 * multiply);
+            intDwarvenRes = intDwarvenRes - ((attackRoll - defenseRoll) * 10 * multiply);
         } else {
             // If they lost
             report = getString(R.string.orclost);
-            orcishResources = orcishResources - (attackRoll * 10 * multiply);
-            dwarvenResources = dwarvenResources - ((defenseRoll - attackRoll) * 10 * multiply);
+            intOrcishRes = intOrcishRes - (attackRoll * 10 * multiply);
+            intDwarvenRes = intDwarvenRes - ((defenseRoll - attackRoll) * 10 * multiply);
         }
         // Disable the orcs button - it's the dwarves' turn, so activate their buttons
         switchSides();
@@ -210,10 +208,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int collectedResources = 500 + (int) (Math.random() * 500) + 1;
         // Adding it to the current resource value
         if (whichSide == 0) {
-            dwarvenResources = dwarvenResources + collectedResources;
+            intDwarvenRes = intDwarvenRes + collectedResources;
             report = getString(R.string.dwarfharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
         } else {
-            orcishResources = orcishResources + collectedResources;
+            intOrcishRes = intOrcishRes + collectedResources;
             report = getString(R.string.orcharvest) + " " + valueOf(collectedResources) + " " + getString(R.string.harvestres) + ".";
         }
         displayReport(report);
@@ -225,29 +223,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     public void peaceTreaty() {
         // Setting the variables to their start state
-        dwarvenResources = 10000;
-        orcishResources = 10000;
-        dwarvenHonor = 0;
-        orcishHonor = 0;
+        intDwarvenRes = 10000;
+        intOrcishRes = 10000;
+        intDwarvenHonor = 0;
+        intOrcishHonor = 0;
 
         // Getting the resource TextViews and set their text to the variable value
-        dRes.setText(String.valueOf(dwarvenResources));
-        oRes.setText(String.valueOf(orcishResources));
+        textDwarvenRes.setText(String.valueOf(intDwarvenRes));
+        textOrcishRes.setText(String.valueOf(intOrcishRes));
 
         // Doing the same for the honor points
-        oHon.setText(String.valueOf(orcishHonor));
-        dHon.setText(String.valueOf(dwarvenHonor));
+        textOrcishHonor.setText(String.valueOf(intOrcishHonor));
+        textDwarvenHonor.setText(String.valueOf(intDwarvenHonor));
         displayReport(getString(R.string.atpeace));
 
         // Enable all buttons
-        orcish1.setEnabled(true);
-        orcish2.setEnabled(true);
-        orcish3.setEnabled(true);
-        orcish0.setEnabled(true);
-        dwarf0.setEnabled(true);
-        dwarf1.setEnabled(true);
-        dwarf2.setEnabled(true);
-        dwarf3.setEnabled(true);
+        buttonOrcish1.setEnabled(true);
+        buttonOrcish2.setEnabled(true);
+        buttonOrcish3.setEnabled(true);
+        buttonOrcish0.setEnabled(true);
+        buttonDwarf0.setEnabled(true);
+        buttonDwarf1.setEnabled(true);
+        buttonDwarf2.setEnabled(true);
+        buttonDwarf3.setEnabled(true);
 
         // The winning report view have to go
         TextView whoWon = (TextView) findViewById(R.id.whoWon);
@@ -259,17 +257,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Which side starts next time? The other side's buttons will be disabled
         int start = (int) (Math.random() * 100)+1;
         if (start <= 50) {
-            orcish0.setEnabled(!orcish0.isEnabled());
-            orcish1.setEnabled(!orcish1.isEnabled());
-            orcish2.setEnabled(!orcish2.isEnabled());
-            orcish3.setEnabled(!orcish3.isEnabled());
-            activeGroup = 0; // The dwarves begin
+            buttonOrcish0.setEnabled(!buttonOrcish0.isEnabled());
+            buttonOrcish1.setEnabled(!buttonOrcish1.isEnabled());
+            buttonOrcish2.setEnabled(!buttonOrcish2.isEnabled());
+            buttonOrcish3.setEnabled(!buttonOrcish3.isEnabled());
+            intActiveGroup = 0; // The dwarves begin
         } else {
-            dwarf0.setEnabled(!dwarf0.isEnabled());
-            dwarf1.setEnabled(!dwarf1.isEnabled());
-            dwarf2.setEnabled(!dwarf2.isEnabled());
-            dwarf3.setEnabled(!dwarf3.isEnabled());
-            activeGroup = 1; // The orcs begin
+            buttonDwarf0.setEnabled(!buttonDwarf0.isEnabled());
+            buttonDwarf1.setEnabled(!buttonDwarf1.isEnabled());
+            buttonDwarf2.setEnabled(!buttonDwarf2.isEnabled());
+            buttonDwarf3.setEnabled(!buttonDwarf3.isEnabled());
+            intActiveGroup = 1; // The orcs begin
         }
     }
 
@@ -279,23 +277,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void displayReport(String r) {
         // Displaying the resource changes on both sides
-        dRes.setText(String.valueOf(dwarvenResources));
-        oRes.setText(String.valueOf(orcishResources));
+        textDwarvenRes.setText(String.valueOf(intDwarvenRes));
+        textOrcishRes.setText(String.valueOf(intOrcishRes));
         // Displaying the honor points change on both sides
-        dHon.setText(String.valueOf(dwarvenHonor));
-        oHon.setText(String.valueOf(orcishHonor));
+        textDwarvenHonor.setText(String.valueOf(intDwarvenHonor));
+        textOrcishHonor.setText(String.valueOf(intOrcishHonor));
 
         // If any of the resources dropped to 0 or below, check the honor points to determine the winner
-        if ((dwarvenResources <= 0) || (orcishResources <= 0)) {
+        if ((intDwarvenRes <= 0) || (intOrcishRes <= 0)) {
             // Disable all buttons
-            orcish1.setEnabled(false);
-            orcish2.setEnabled(false);
-            orcish3.setEnabled(false);
-            orcish0.setEnabled(false);
-            dwarf0.setEnabled(false);
-            dwarf1.setEnabled(false);
-            dwarf2.setEnabled(false);
-            dwarf3.setEnabled(false);
+            buttonOrcish1.setEnabled(false);
+            buttonOrcish2.setEnabled(false);
+            buttonOrcish3.setEnabled(false);
+            buttonOrcish0.setEnabled(false);
+            buttonDwarf0.setEnabled(false);
+            buttonDwarf1.setEnabled(false);
+            buttonDwarf2.setEnabled(false);
+            buttonDwarf3.setEnabled(false);
             TextView whoWon = (TextView) findViewById(R.id.whoWon);
 
             // The report view has to go
@@ -303,17 +301,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             rep.setVisibility(GONE);
 
             // Make the correct winner view visible
-            if (dwarvenHonor > orcishHonor) { // The dwarves won
+            if (intDwarvenHonor > intOrcishHonor) { // The dwarves won
                 whoWon.setText(R.string.dwarveswon);
                 whoWon.setVisibility(VISIBLE);
             }
 
-            if (orcishHonor > dwarvenHonor) { // The orcs won
+            if (intOrcishHonor > intDwarvenHonor) { // The orcs won
                 whoWon.setText(R.string.orcswon);
                 whoWon.setVisibility(VISIBLE);
             }
 
-            if (orcishHonor == dwarvenHonor) { // tie
+            if (intOrcishHonor == intDwarvenHonor) { // tie
                 r = r + "\n" + getString(R.string.nowinner);
             }
         }
@@ -328,17 +326,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void switchSides() {
         // Switch the states of the buttons
-        orcish0.setEnabled(!orcish0.isEnabled());
-        orcish1.setEnabled(!orcish1.isEnabled());
-        orcish2.setEnabled(!orcish2.isEnabled());
-        orcish3.setEnabled(!orcish3.isEnabled());
+        buttonOrcish0.setEnabled(!buttonOrcish0.isEnabled());
+        buttonOrcish1.setEnabled(!buttonOrcish1.isEnabled());
+        buttonOrcish2.setEnabled(!buttonOrcish2.isEnabled());
+        buttonOrcish3.setEnabled(!buttonOrcish3.isEnabled());
 
-        dwarf0.setEnabled(!dwarf0.isEnabled());
-        dwarf1.setEnabled(!dwarf1.isEnabled());
-        dwarf2.setEnabled(!dwarf2.isEnabled());
-        dwarf3.setEnabled(!dwarf3.isEnabled());
+        buttonDwarf0.setEnabled(!buttonDwarf0.isEnabled());
+        buttonDwarf1.setEnabled(!buttonDwarf1.isEnabled());
+        buttonDwarf2.setEnabled(!buttonDwarf2.isEnabled());
+        buttonDwarf3.setEnabled(!buttonDwarf3.isEnabled());
         // And switch group (0: dwarves, 1: orcs)
-        activeGroup = 1 - activeGroup;
+        intActiveGroup = 1 - intActiveGroup;
     }
 
     /**
@@ -351,11 +349,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Save UI state changes to the savedInstanceState.
         // This bundle will be passed to onCreate if the process is
         // killed and restarted.
-        savedInstanceState.putInt("dwarvenResources", dwarvenResources);
-        savedInstanceState.putInt("orcishResources", orcishResources);
-        savedInstanceState.putInt("dwarvenHonor", dwarvenHonor);
-        savedInstanceState.putInt("orcishHonor", orcishHonor);
-        savedInstanceState.putInt("activeGroup", activeGroup);
+        savedInstanceState.putInt("intDwarvenRes", intDwarvenRes);
+        savedInstanceState.putInt("intOrcishRes", intOrcishRes);
+        savedInstanceState.putInt("intDwarvenHonor", intDwarvenHonor);
+        savedInstanceState.putInt("intOrcishHonor", intOrcishHonor);
+        savedInstanceState.putInt("intActiveGroup", intActiveGroup);
     }
 
     /**
@@ -367,31 +365,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onRestoreInstanceState(savedInstanceState);
         // Restore UI state from the savedInstanceState.
         // This bundle has also been passed to onCreate.
-        dwarvenResources = savedInstanceState.getInt("dwarvenResources");
-        orcishResources = savedInstanceState.getInt("orcishResources");
-        dwarvenHonor = savedInstanceState.getInt("dwarvenHonor");
-        orcishHonor = savedInstanceState.getInt("orcishHonor");
-        activeGroup = savedInstanceState.getInt("activeGroup");
+        intDwarvenRes = savedInstanceState.getInt("intDwarvenRes");
+        intOrcishRes = savedInstanceState.getInt("intOrcishRes");
+        intDwarvenHonor = savedInstanceState.getInt("intDwarvenHonor");
+        intOrcishHonor = savedInstanceState.getInt("intOrcishHonor");
+        intActiveGroup = savedInstanceState.getInt("intActiveGroup");
 
-        orcish1.setEnabled(true);
-        orcish2.setEnabled(true);
-        orcish3.setEnabled(true);
-        orcish0.setEnabled(true);
-        dwarf0.setEnabled(true);
-        dwarf1.setEnabled(true);
-        dwarf2.setEnabled(true);
-        dwarf3.setEnabled(true);
+        buttonOrcish1.setEnabled(true);
+        buttonOrcish2.setEnabled(true);
+        buttonOrcish3.setEnabled(true);
+        buttonOrcish0.setEnabled(true);
+        buttonDwarf0.setEnabled(true);
+        buttonDwarf1.setEnabled(true);
+        buttonDwarf2.setEnabled(true);
+        buttonDwarf3.setEnabled(true);
 
-        if (activeGroup == 0) {
-            orcish1.setEnabled(false);
-            orcish2.setEnabled(false);
-            orcish3.setEnabled(false);
-            orcish0.setEnabled(false);
+        if (intActiveGroup == 0) {
+            buttonOrcish1.setEnabled(false);
+            buttonOrcish2.setEnabled(false);
+            buttonOrcish3.setEnabled(false);
+            buttonOrcish0.setEnabled(false);
         } else {
-            dwarf0.setEnabled(false);
-            dwarf1.setEnabled(false);
-            dwarf2.setEnabled(false);
-            dwarf3.setEnabled(false);
+            buttonDwarf0.setEnabled(false);
+            buttonDwarf1.setEnabled(false);
+            buttonDwarf2.setEnabled(false);
+            buttonDwarf3.setEnabled(false);
         }
         displayReport(" ");
     }
