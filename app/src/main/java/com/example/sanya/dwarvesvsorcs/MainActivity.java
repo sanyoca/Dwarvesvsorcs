@@ -72,19 +72,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface fancyFont;
         fancyFont = Typeface.createFromAsset(getAssets(), "fonts/ringbearer.ttf");
 
-        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_dwarfhonor)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_orchonor)).setTypeface(fancyFont);
         textOrcishHonor.setTypeface(fancyFont);
         textDwarvenHonor.setTypeface(fancyFont);
         textOrcishRes.setTypeface(fancyFont);
         textDwarvenRes.setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_dwarfhonor)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_orchonor)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.report)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.whoWon)).setTypeface(fancyFont);
 
         // Set the custom font for the buttons as well
-        ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
         buttonDwarf0.setTypeface(fancyFont);
         buttonDwarf1.setTypeface(fancyFont);
         buttonDwarf2.setTypeface(fancyFont);
@@ -93,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonOrcish1.setTypeface(fancyFont);
         buttonOrcish2.setTypeface(fancyFont);
         buttonOrcish3.setTypeface(fancyFont);
+        ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
 
         // Which side starts? The other side's buttons will be disabled
         int start = (int) (Math.random() * 100) + 1;
