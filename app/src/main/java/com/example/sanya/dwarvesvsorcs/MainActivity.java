@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonOrcish1 = (Button) findViewById(R.id.orcish1);
         buttonOrcish2 = (Button) findViewById(R.id.orcish2);
         buttonOrcish3 = (Button) findViewById(R.id.orcish3);
-        // get the textviews that display the honors and resources
+        // Get/initialize the textviews that display the honors and resources
         textDwarvenRes = (TextView) findViewById(R.id.dwarvenResources);
         textOrcishRes = (TextView) findViewById(R.id.orcishResources);
         textDwarvenHonor = (TextView) findViewById(R.id.dwarvenHonor);
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonOrcish3.setTypeface(fancyFont);
 
         // Which side starts? The other side's buttons will be disabled
-        int start = (int) (Math.random() * 100)+1;
+        int start = (int) (Math.random() * 100) + 1;
         if (start <= 50) {
             buttonOrcish0.setEnabled(!buttonOrcish0.isEnabled());
             buttonOrcish1.setEnabled(!buttonOrcish1.isEnabled());
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            // They made peace - lol
+            // They made peace - lol, like that'd ever happen
             case R.id.button_peace:
                 peaceTreaty();
                 break;
@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method is called when a dwarven button is clicked
+     *
      * @param multiply shows the difficulty and therefore the loss/win resource multiplier and the honor points that could be gained
      */
     public void dwarvesAttack(int multiply) {
@@ -176,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method is called when an orcish button is clicked
+     *
      * @param multiply shows the difficulty and therefore the loss/win resource multiplier and the honor points that could be gained
      */
     public void orcsAttack(int multiply) {
@@ -204,6 +206,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * Method for resource collection
+     *
      * @param whichSide shows which side (0:dwarves, 1:orcs) collected resources
      */
     public void collect(int whichSide) {
@@ -259,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rep.setVisibility(VISIBLE);
 
         // Which side starts next time? The other side's buttons will be disabled
-        int start = (int) (Math.random() * 100)+1;
+        int start = (int) (Math.random() * 100) + 1;
         if (start <= 50) {
             buttonOrcish0.setEnabled(!buttonOrcish0.isEnabled());
             buttonOrcish1.setEnabled(!buttonOrcish1.isEnabled());
@@ -277,6 +280,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method displays reports.
+     *
      * @param r the report to be displayed
      */
     private void displayReport(String r) {
@@ -345,6 +349,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * On screen rotation - or anything that pauses the run of the app - save the current status of the app
+     *
      * @param savedInstanceState a bundle
      */
     @Override
@@ -362,6 +367,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * When the app restarts, restore the values
+     *
      * @param savedInstanceState a bundle
      */
     @Override
