@@ -71,16 +71,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Set the custom font, source: http://www.fontspace.com/pete-klassen/ringbearer
         Typeface fancyFont;
         fancyFont = Typeface.createFromAsset(getAssets(), "fonts/ringbearer.ttf");
+        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
+        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
         textOrcishHonor.setTypeface(fancyFont);
         textDwarvenHonor.setTypeface(fancyFont);
         textOrcishRes.setTypeface(fancyFont);
         textDwarvenRes.setTypeface(fancyFont);
-        ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.report)).setTypeface(fancyFont);
         ((TextView) findViewById(R.id.whoWon)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_res_dwarf)).setTypeface(fancyFont);
-        ((TextView) findViewById(R.id.text_res_orc)).setTypeface(fancyFont);
 
+        ((Button) findViewById(R.id.button_peace)).setTypeface(fancyFont);
         buttonDwarf0.setTypeface(fancyFont);
         buttonDwarf1.setTypeface(fancyFont);
         buttonDwarf2.setTypeface(fancyFont);
