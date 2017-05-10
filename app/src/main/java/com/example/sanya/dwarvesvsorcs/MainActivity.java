@@ -363,6 +363,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         savedInstanceState.putInt("intDwarvenHonor", intDwarvenHonor);
         savedInstanceState.putInt("intOrcishHonor", intOrcishHonor);
         savedInstanceState.putInt("intActiveGroup", intActiveGroup);
+        String stringReport = ((TextView) findViewById(R.id.report)).getText().toString();
+        savedInstanceState.putString("stringReport", stringReport);
     }
 
     /**
@@ -401,6 +403,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             buttonDwarf2.setEnabled(false);
             buttonDwarf3.setEnabled(false);
         }
-        displayReport(" ");
+        displayReport(savedInstanceState.getString("stringReport"));
     }
 }

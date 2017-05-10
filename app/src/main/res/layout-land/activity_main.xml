@@ -191,17 +191,6 @@
 
         </LinearLayout>
 
-        <!-- Peace treaty button (Reset) -->
-
-        <Button
-            android:id="@+id/button_peace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small_margin"
-            android:backgroundTint="@android:color/holo_green_light"
-            android:text="@string/peacetreaty"
-            tools:ignore="UnusedAttribute" />
-
     </LinearLayout>
 
     <!-- The reports and the winner appear here -->
@@ -212,6 +201,17 @@
         android:layout_weight="1"
         android:orientation="vertical"
         tools:ignore="RtlHardcoded">
+
+        <!-- Peace treaty button (Reset) -->
+
+        <Button
+            android:id="@+id/button_peace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:text="@string/peacetreaty"
+            tools:ignore="UnusedAttribute" />
 
         <!-- The report view -->
         <TextView

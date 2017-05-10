@@ -11,8 +11,8 @@
     <string name="murderpeons">Murder peons</string>
     <string name="extruderesources">Extrude resources</string>
     <string name="peacetreaty">Peace treaty</string>
-    <string name="orcswon">THE\nORCS\nWON!</string>
-    <string name="dwarveswon">THE\nDWARVES\nWON!</string>
+    <string name="orcswon">THE ORCS WON!</string>
+    <string name="dwarveswon">THE DWARVES WON!</string>
     <string name="tenthousand" translatable="false">10000</string>
     <string name="zero" translatable="false">0</string>
     <string name="orclost">The orcs attacked and lost.\n</string>
