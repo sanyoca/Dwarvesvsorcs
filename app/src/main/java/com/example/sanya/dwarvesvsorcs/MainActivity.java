@@ -156,14 +156,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int defenseRoll = (int) ((Math.random() * 100) + 1);
         String report;
 
-        intDwarvenRes = intDwarvenRes - (defenseRoll * 10 * multiply);
-        intOrcishRes = intOrcishRes - ((attackRoll - defenseRoll) * 10 * multiply);
-
         // If the dwarves (the attackers) won
         if (attackRoll >= defenseRoll) {
+            intDwarvenRes = intDwarvenRes - (defenseRoll * 10 * multiply);
+            intOrcishRes = intOrcishRes - ((attackRoll - defenseRoll) * 10 * multiply);
             report = getString(R.string.dwarfwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
             intDwarvenHonor = intDwarvenHonor + multiply;
         } else {
+            intDwarvenRes = intDwarvenRes - (defenseRoll * 10 * multiply);
+            intOrcishRes = intOrcishRes - ((defenseRoll - attackRoll) * 10 * multiply);
             // If they lost
             report = getString(R.string.dwarflost);
         }
@@ -184,14 +185,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int defenseRoll = (int) ((Math.random() * 100) + 1);
         String report;
 
-        intOrcishRes = intOrcishRes - (defenseRoll * 10 * multiply);
-        intDwarvenRes = intDwarvenRes - ((attackRoll - defenseRoll) * 10 * multiply);
-
         // If the orcs (the attackers) won
         if (attackRoll >= defenseRoll) {
+            intOrcishRes = intOrcishRes - (defenseRoll * 10 * multiply);
+            intDwarvenRes = intDwarvenRes - ((attackRoll - defenseRoll) * 10 * multiply);
             report = getString(R.string.orcwin) + "\nThey gained " + String.valueOf(multiply) + " honor.";
             intOrcishHonor = intOrcishHonor + multiply;
         } else {
+            intOrcishRes = intOrcishRes - (defenseRoll * 10 * multiply);
+            intDwarvenRes = intDwarvenRes - ((defenseRoll - attackRoll) * 10 * multiply);
             // If they lost
             report = getString(R.string.orclost);
         }

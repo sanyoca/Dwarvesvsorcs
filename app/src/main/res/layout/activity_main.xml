@@ -15,39 +15,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="UselessParent">
+        android:orientation="horizontal">
 
-        <!-- Layout for the two sides -->
+        <!-- The dwarven upper/action layout (Left side) -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            style="@style/actionLayout"
+            android:orientation="vertical">
 
-            <!-- The dwarven upper/action layout (Left side) -->
+            <!-- Dwarven resources -->
             <LinearLayout
-                style="@style/actionLayout"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black">
 
-                <!-- Dwarven resources -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/black">
+                <TextView
+                    android:id="@+id/text_res_dwarf"
+                    style="@style/resourceStyle"
+                    android:text="@string/resources" />
 
-                    <TextView
-                        android:id="@+id/text_res_dwarf"
-                        style="@style/resourceStyle"
-                        android:text="@string/resources" />
+                <TextView
+                    android:id="@+id/dwarvenResources"
+                    style="@style/resourceStyle"
+                    android:text="@string/tenthousand" />
 
-                    <TextView
-                        android:id="@+id/dwarvenResources"
-                        style="@style/resourceStyle"
-                        android:text="@string/tenthousand" />
+            </LinearLayout>
 
-                </LinearLayout>
+            <!-- Dwarven honor -->
 
-                <!-- Dwarven honor -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    style="@style/racemarkers"
+                    android:src="@drawable/dwarfface"
+                    tools:ignore="ContentDescription" />
+
                 <TextView
                     android:id="@+id/dwarvenHonor"
                     style="@style/honorPointsStyle"
@@ -56,60 +59,71 @@
                 <TextView
                     android:id="@+id/text_dwarfhonor"
                     style="@style/honorTextStyle"
+                    android:layout_below="@id/dwarvenHonor"
                     android:text="@string/honor" />
+            </RelativeLayout>
+            <!-- Dwarven action buttons -->
+            <Button
+                android:id="@+id/dwarf3"
+                style="@style/dwarvenButtons"
+                android:tag="3"
+                android:text="@string/killachieftan" />
 
-                <!-- Dwarven action buttons -->
-                <Button
-                    android:id="@+id/dwarf3"
-                    style="@style/dwarvenButtons"
-                    android:tag="3"
-                    android:text="@string/killachieftan" />
+            <Button
+                android:id="@+id/dwarf2"
+                style="@style/dwarvenButtons"
+                android:tag="2"
+                android:text="@string/persecuteraiders" />
 
-                <Button
-                    android:id="@+id/dwarf2"
-                    style="@style/dwarvenButtons"
-                    android:tag="2"
-                    android:text="@string/persecuteraiders" />
+            <Button
+                android:id="@+id/dwarf1"
+                style="@style/dwarvenButtons"
+                android:tag="1"
+                android:text="@string/slaygrunts" />
 
-                <Button
-                    android:id="@+id/dwarf1"
-                    style="@style/dwarvenButtons"
-                    android:tag="1"
-                    android:text="@string/slaygrunts" />
+            <Button
+                android:id="@+id/dwarf0"
+                style="@style/dwarvenButtons"
+                android:text="@string/harvest" />
 
-                <Button
-                    android:id="@+id/dwarf0"
-                    style="@style/dwarvenButtons"
-                    android:text="@string/harvest" />
+        </LinearLayout>
+
+        <!-- The orcish upper/action layout (Right side) -->
+        <LinearLayout
+            style="@style/actionLayout"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <!-- Orcish resources -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black">
+
+                <TextView
+                    android:id="@+id/text_res_orc"
+                    style="@style/resourceStyle"
+                    android:text="@string/resources" />
+
+                <TextView
+                    android:id="@+id/orcishResources"
+                    style="@style/resourceStyle"
+                    android:text="@string/tenthousand" />
 
             </LinearLayout>
 
-            <!-- The orcish upper/action layout (Right side) -->
-            <LinearLayout
-                style="@style/actionLayout"
-                android:layout_marginLeft="@dimen/small_margin"
-                android:orientation="vertical"
-                tools:ignore="RtlHardcoded">
+            <!-- Orcish honor -->
 
-                <!-- Orcish resources -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/black">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/text_res_orc"
-                        style="@style/resourceStyle"
-                        android:text="@string/resources" />
+                <ImageView
+                    style="@style/racemarkers"
+                    android:src="@drawable/orcface"
+                    tools:ignore="ContentDescription" />
 
-                    <TextView
-                        android:id="@+id/orcishResources"
-                        style="@style/resourceStyle"
-                        android:text="@string/tenthousand" />
-
-                </LinearLayout>
-
-                <!-- Orcish honor -->
                 <TextView
                     android:id="@+id/orcishHonor"
                     style="@style/honorPointsStyle"
@@ -118,69 +132,69 @@
                 <TextView
                     android:id="@+id/text_orchonor"
                     style="@style/honorTextStyle"
+                    android:layout_below="@id/orcishHonor"
                     android:text="@string/honor" />
+            </RelativeLayout>
+            <!-- Orcish action buttons -->
+            <Button
+                android:id="@+id/orcish3"
+                style="@style/orcishButtons"
+                android:tag="3"
+                android:text="@string/butchathane" />
 
-                <!-- Orcish action buttons -->
-                <Button
-                    android:id="@+id/orcish3"
-                    style="@style/orcishButtons"
-                    android:tag="3"
-                    android:text="@string/butchathane" />
+            <Button
+                android:id="@+id/orcish2"
+                style="@style/orcishButtons"
+                android:tag="2"
+                android:text="@string/razeavillage" />
 
-                <Button
-                    android:id="@+id/orcish2"
-                    style="@style/orcishButtons"
-                    android:tag="2"
-                    android:text="@string/razeavillage" />
+            <Button
+                android:id="@+id/orcish1"
+                style="@style/orcishButtons"
+                android:tag="1"
+                android:text="@string/murderpeons" />
 
-                <Button
-                    android:id="@+id/orcish1"
-                    style="@style/orcishButtons"
-                    android:tag="1"
-                    android:text="@string/murderpeons" />
-
-                <Button
-                    android:id="@+id/orcish0"
-                    style="@style/orcishButtons"
-                    android:text="@string/extruderesources" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/orcish0"
+                style="@style/orcishButtons"
+                android:text="@string/extruderesources" />
 
         </LinearLayout>
 
-        <!-- Info / rules -->
-        <ImageView
-            android:id="@+id/showrules"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:clickable="true"
-            android:padding="@dimen/small_margin"
-            android:src="@drawable/ic_info_black_24dp"
-            tools:ignore="ContentDescription" />
-
-        <!-- Peace treaty button (Reset) -->
-        <Button
-            android:id="@+id/button_peace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small_margin"
-            android:backgroundTint="@android:color/holo_green_light"
-            android:text="@string/peacetreaty"
-            tools:ignore="UnusedAttribute" />
-
-        <!-- The reports appear here -->
-        <TextView
-            android:id="@+id/report"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/trans_white"
-            android:textColor="@android:color/black" />
-
-        <!-- The winner view -->
-        <TextView
-            android:id="@+id/whoWon"
-            style="@style/victory"
-            android:text="@string/orcswon" />
     </LinearLayout>
+
+    <!-- Info / rules -->
+    <ImageView
+        android:id="@+id/showrules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:padding="@dimen/small_margin"
+        android:src="@drawable/ic_info_black_24dp"
+        tools:ignore="ContentDescription" />
+
+    <!-- Peace treaty button (Reset) -->
+    <Button
+        android:id="@+id/button_peace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="@string/peacetreaty"
+        tools:ignore="UnusedAttribute" />
+
+    <!-- The reports appear here -->
+    <TextView
+        android:id="@+id/report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/trans_white"
+        android:textColor="@android:color/black" />
+
+    <!-- The winner view -->
+    <TextView
+        android:id="@+id/whoWon"
+        style="@style/victory"
+        android:text="@string/orcswon" />
 </LinearLayout>
