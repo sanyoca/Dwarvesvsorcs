@@ -43,7 +43,6 @@
             </LinearLayout>
 
             <!-- Dwarven honor -->
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -66,7 +65,6 @@
             </RelativeLayout>
 
             <!-- Dwarven action buttons 1st line -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,7 +121,6 @@
             tools:ignore="RtlHardcoded">
 
             <!-- Orcish resources -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,7 +139,6 @@
             </LinearLayout>
 
             <!-- Orcish honor -->
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -165,7 +161,6 @@
             </RelativeLayout>
 
             <!-- Orcish action buttons 1st line -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -225,7 +220,6 @@
         tools:ignore="RtlHardcoded">
 
         <!-- Peace treaty button (Reset) -->
-
         <Button
             android:id="@+id/button_peace"
             android:layout_width="match_parent"

@@ -41,7 +41,6 @@
             </LinearLayout>
 
             <!-- Dwarven honor -->
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -62,6 +61,7 @@
                     android:layout_below="@id/dwarvenHonor"
                     android:text="@string/honor" />
             </RelativeLayout>
+
             <!-- Dwarven action buttons -->
             <Button
                 android:id="@+id/dwarf3"
